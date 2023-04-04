@@ -1,0 +1,12 @@
+{% if page.author %}
+{% assign num_authors = page.author.size %}
+<p class="author">
+  {% if num_authors == 1 %}
+  {{page.author[0]}}
+  {% elsif num_authors == 2 %}
+  {{page.author[0]}} and {{page.author[1]}}
+  {% else %}
+  {% for name in page.author %}{% unless forloop.first %}, {% endunless %}{% if forloop.last %}and {% endif %}{{name}}{% endfor %}
+  {% endif %}
+</p>
+{% endif %}
