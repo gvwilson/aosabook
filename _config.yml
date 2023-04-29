@@ -1,6 +1,5 @@
 title: The Architecture of Open Source Applications
 repository: gvwilson/aosabook
-destination: docs
 
 exclude:
   - README.md
