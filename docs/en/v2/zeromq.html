@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): ZeroMQ</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)ZeroMQ</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>ZeroMQ</h1>
-      <p class="author"><a href="intro2.html#sustrik-martin">Martin S&uacute;strik</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>ZeroMQ</h1>
+
+  
+
+<p class="author">
+  
+  Martin Süstrik
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>&Oslash;MQ is a messaging system, or "message-oriented middleware", if you
 will. It's used in environments as diverse as financial services, game
 development, embedded systems, academic research and aerospace.</p>
@@ -147,7 +159,7 @@ used from two different and independent libraries. The application
 then uses both of those libraries.</p>
 
 <figure id="fig.zeromq.multiuse">
-  <img src="../../images/zeromq/aosa1.png" />
+  <img src="../../static/zeromq/aosa1.png" />
   <figcaption>Figure 24.1: &Oslash;MQ being used by different libraries</figcaption>
 </figure>
 
@@ -196,7 +208,7 @@ passed. Therefore the throughput is 0.83 msgs/sec (5/6) and
 the latency is 1.2 sec (6/5), right?</p>
 
 <figure id="fig.zeromq.a2b">
-  <img src="../../images/zeromq/aosa8.png" />
+  <img src="../../static/zeromq/aosa8.png" />
   <figcaption>Figure 24.2: Sending messages from A to B</figcaption>
 </figure>
 
@@ -331,7 +343,7 @@ that in the latter case the buffer is reference-counted so that it can
 be referenced by multiple handles without the need to copy the data.</p>
 
 <figure id="fig.zeromq.ref">
-  <img src="../../images/zeromq/aosa2.png" />
+  <img src="../../static/zeromq/aosa2.png" />
   <figcaption>Figure 24.3: Message copying (or not)</figcaption>
 </figure>
 
@@ -356,7 +368,7 @@ user/kernel space boundary, TCP implementation, IP implementation,
 Ethernet layer, the NIC itself and back up the stack again). </p>
 
 <figure id="fig.zeromq.send4">
-  <img src="../../images/zeromq/aosa3.png" />
+  <img src="../../static/zeromq/aosa3.png" />
   <figcaption>Figure 24.4: Sending four messages</figcaption>
 </figure>
 
@@ -368,7 +380,7 @@ of magnitude, especially if the messages are small and hundreds of
 them can be packed into a single batch.</p>
 
 <figure id="fig.zeromq.joinmessage">
-  <img src="../../images/zeromq/aosa4.png" />
+  <img src="../../static/zeromq/aosa4.png" />
   <figcaption>Figure 24.5: Batching messages</figcaption>
 </figure>
 
@@ -434,7 +446,7 @@ fast. From now on we'll have a look at the actual architecture of the
 system (<a href="#fig.zeromq.arch">Figure 24.6</a>).</p>
 
 <figure id="fig.zeromq.arch">
-  <img src="../../images/zeromq/aosa9.png" />
+  <img src="../../static/zeromq/aosa9.png" />
   <figcaption>Figure 24.6: &Oslash;MQ architecture</figcaption>
 </figure>
 
@@ -525,7 +537,7 @@ negative performance impact of cache pollution
 (<a href="#fig.zeromq.cache">Figure 24.7</a>).</p>
 
 <figure id="fig.zeromq.cache">
-  <img src="../../images/zeromq/aosa5.png" />
+  <img src="../../static/zeromq/aosa5.png" />
   <figcaption>Figure 24.7: Multiple worker threads</figcaption>
 </figure>
 
@@ -587,7 +599,7 @@ the queue doesn't have to take care of synchronising the writers
 be implemented in an extra-efficient way.</p>
 
 <figure id="fig.zeromq.multiqueue">
-  <img src="../../images/zeromq/aosa6.png" />
+  <img src="../../static/zeromq/aosa6.png" />
   <figcaption>Figure 24.8: Queues</figcaption>
 </figure>
 
@@ -624,7 +636,7 @@ queue can be shifted to the pre-read by doing nothing but modifying
 another pointer.</p>
 
 <figure id="fig.zeromq.flush">
-  <img src="../../images/zeromq/aosa7.png" />
+  <img src="../../static/zeromq/aosa7.png" />
   <figcaption>Figure 24.9: Lock-free queue</figcaption>
 </figure>
 
@@ -853,5 +865,5 @@ systematic manner. It focuses on problems that are interesting from
 a software architecture point of view, and we hope that designers and
 programmers in the open source community will find it useful.</p>
 
-</body>
+  </body>
 </html>

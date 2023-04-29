@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): VisTrails</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)VisTrails</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>VisTrails</h1>
-      <p class="author"><a href="intro1.html#freire-juliana">Juliana Freire</a>, <a href="intro1.html#koop-david">David Koop</a>, <a href="intro1.html#santos-emanuele">Emanuele Santos</a>, <a href="intro1.html#scheidegger-carlos">Carlos Scheidegger</a>, <a href="intro1.html#silva-claudio">Claudio Silva</a>, and <a href="intro1.html#vo-huy">Huy T. Vo</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>VisTrails</h1>
+
+  
+
+<p class="author">
+  
+  Juliana Freire, David Koop, Emanuele Santos, Carlos Scheidegger, Claudio Silva, and Huy T. Vo
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>VisTrails<sup class="footnote"><a href="#footnote-1">1</a></sup> is an open-source
 system that supports data exploration and visualization.  It includes
 and substantially extends useful features of scientific workflow and
@@ -97,7 +109,7 @@ have designed the system from the ground up with portability in
 mind. VisTrails runs on Windows, Mac and Linux.</p>
 
 <div class="figure" id="fig.vistrails.overview">
-  <img src="../../images/vistrails/overview.png" alt="[Components of the VisTrails User Interface]" />
+  <img src="../../static/vistrails/overview.png" alt="[Components of the VisTrails User Interface]" />
   <p>Figure 23.1: Components of the VisTrails User Interface</p>
 </div>
 
@@ -189,7 +201,7 @@ capture provenance, VisTrails was <em>designed</em> to support
 provenance.</p>
 
 <div class="figure" id="fig.vistrails.tree">
-  <img src="../../images/vistrails/overview-tree.png" alt="[Provenance of Exploration Enhanced by Annotations]" />
+  <img src="../../static/vistrails/overview-tree.png" alt="[Provenance of Exploration Enhanced by Annotations]" />
   <p>Figure 23.2: Provenance of Exploration Enhanced by Annotations</p>
 </div>
 
@@ -231,7 +243,7 @@ also provide additional metadata, including a tag to identify the
 workflow and a written description.</p>
 
 <div class="figure" id="fig.vistrails.arch">
-  <img src="../../images/vistrails/system-interaction.png" alt="[VisTrails Architecture]" />
+  <img src="../../static/vistrails/system-interaction.png" alt="[VisTrails Architecture]" />
   <p>Figure 23.3: VisTrails Architecture</p>
 </div>
 
@@ -304,7 +316,7 @@ workflows in high-performance computing environments.</p>
 <h3>23.3.1. The Version Tree: Change-Based Provenance</h3>
 
 <div class="figure" id="fig.vistrails.changeprov">
-  <img src="../../images/vistrails/change-based-prov.png" alt="[Change-Based Provenance Model]" />
+  <img src="../../static/vistrails/change-based-prov.png" alt="[Change-Based Provenance Model]" />
   <p>Figure 23.4: Change-Based Provenance Model</p>
 </div>
 
@@ -693,7 +705,7 @@ evaluates to itself, the behavior is exactly the same as if the value
 had actually been specified as a constant.</p>
 
 <div class="figure" id="fig.vistrails.pysource">
-  <img src="../../images/vistrails/python-source.png" alt="[Prototyping New Functionality with the PythonSource Module]" />
+  <img src="../../static/vistrails/python-source.png" alt="[Prototyping New Functionality with the PythonSource Module]" />
   <p>Figure 23.5: Prototyping New Functionality with the <code>PythonSource</code> Module</p>
 </div>
 
@@ -731,7 +743,7 @@ publications. For a more comprehensive description of VisTrails and its features
 see VisTrails' online documentation<sup class="footnote"><a href="#footnote-6">6</a></sup>.</p>
 
 <div class="figure" id="fig.vistrails.spreadsheet">
-  <img src="../../images/vistrails/spreadsheet.png" alt="[The Visual Spreadsheet]" />
+  <img src="../../static/vistrails/spreadsheet.png" alt="[The Visual Spreadsheet]" />
   <p>Figure 23.6: The Visual Spreadsheet</p>
 </div>
 
@@ -1185,5 +1197,5 @@ the Department of Energy SciDAC (VACET and SDM centers), and IBM Faculty Awards.
 </ol>
 </div>
 
-</body>
+  </body>
 </html>

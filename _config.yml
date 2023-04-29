@@ -1,0 +1,21 @@
+title: The Architecture of Open Source Applications
+repository: gvwilson/aosabook
+destination: docs
+
+exclude:
+  - README.md
+  - LICENSE.md
+  - Gemfile
+  - Gemfile.lock
+  - Makefile
+  - '.#*'
+  - '*~'
+  - src
+
+markdown: kramdown
+highlighter: rouge
+
+plugins:
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from

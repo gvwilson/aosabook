@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): Selenium WebDriver</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)Selenium WebDriver</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>Selenium WebDriver</h1>
-      <p class="author"><a href="intro1.html#stewart-simon">Simon Stewart</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>Selenium WebDriver</h1>
+
+  
+
+<p class="author">
+  
+  Simon Stewart
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Selenium is a browser automation tool, commonly used for writing
 end-to-end tests of web applications. A browser automation tool
 does exactly what you would expect: automate the control of a
@@ -558,12 +570,12 @@ of the current page. A successful cast of a WebDriver instance to that
 interface indicates that you can expect the methods on it to work.</p>
 
 <div class="figure" id="fig.sel.int1">
-  <img src="../../images/selenium/role-based-interfaces-one-interface.png" alt="[Accountant and Stockist Depend on Shop]" />
+  <img src="../../static/selenium/role-based-interfaces-one-interface.png" alt="[Accountant and Stockist Depend on Shop]" />
   <p>Figure 16.1: Accountant and Stockist Depend on Shop</p>
 </div>
 
 <div class="figure" id="fig.sel.int2">
-  <img src="../../images/selenium/role-based-interfaces-two-interfaces.png" alt="[Shop Implements HasBalance and Stockable]" />
+  <img src="../../static/selenium/role-based-interfaces-two-interfaces.png" alt="[Shop Implements HasBalance and Stockable]" />
   <p>Figure 16.2: Shop Implements HasBalance and Stockable</p>
 </div>
 
@@ -699,7 +711,7 @@ atoms. Finally, there are adapter layers that compose atoms in order
 to meet the API contracts of both WebDriver and Core.</p>
 
 <div class="figure" id="fig.sel.atoms">
-  <img src="../../images/selenium/atoms.png" alt="[Layers of Selenium Javascript Library]" />
+  <img src="../../static/selenium/atoms.png" alt="[Layers of Selenium Javascript Library]" />
   <p>Figure 16.3: Layers of Selenium Javascript Library</p>
 </div>
 
@@ -1047,7 +1059,7 @@ GET. We delegate down to a Java library that can handle HTTP (the
 Apache HTTP Client) to call the server.</p>
 
 <div class="figure" id="fig.sel.ffdr">
-  <img src="../../images/selenium/firefox-driver-overall-architecture.png" alt="[Overview of the Firefox Driver Architecture]" />
+  <img src="../../static/selenium/firefox-driver-overall-architecture.png" alt="[Overview of the Firefox Driver Architecture]" />
   <p>Figure 16.4: Overview of the Firefox Driver Architecture</p>
 </div>
 
@@ -1276,7 +1288,7 @@ an equivalent C# project.</p>
 <a href="#fig.sel.sie">Figure 16.5</a>.</p>
 
 <div class="figure" id="fig.sel.sie">
-  <img src="../../images/selenium/simple-ie-stack.png" alt="[Original IE Driver]" />
+  <img src="../../static/selenium/simple-ie-stack.png" alt="[Original IE Driver]" />
   <p>Figure 16.5: Original IE Driver</p>
 </div>
 
@@ -1340,7 +1352,7 @@ public String getAttribute(String name) {
 <p class="continue">This lead to the design shown in <a href="#fig.sel.ient">Figure 16.6</a>.</p>
 
 <div class="figure" id="fig.sel.ient">
-  <img src="../../images/selenium/ie-stack-no-threads.png" alt="[Modified IE Driver]" />
+  <img src="../../static/selenium/ie-stack-no-threads.png" alt="[Modified IE Driver]" />
   <p>Figure 16.6: Modified IE Driver</p>
 </div>
 
@@ -1368,7 +1380,7 @@ of writing, the design of the IE driver looks like
 <a href="#fig.sel.fullie">Figure 16.7</a>.</p>
 
 <div class="figure" id="fig.sel.fullie">
-  <img src="../../images/selenium/full-ie-stack.png" alt="[IE Driver as of Selenium 2.0 alpha 7]" />
+  <img src="../../static/selenium/full-ie-stack.png" alt="[IE Driver as of Selenium 2.0 alpha 7]" />
   <p>Figure 16.7: IE Driver as of Selenium 2.0 alpha 7</p>
 </div>
 
@@ -1434,7 +1446,7 @@ control as the original Selenium RC.</p>
 <a href="#fig.sel.arch">Figure 16.8</a>.</p>
 
 <div class="figure" id="fig.sel.arch">
-  <img src="../../images/selenium/selenium-rc.png" alt="[Outline of Selenium RC's Architecture]" />
+  <img src="../../static/selenium/selenium-rc.png" alt="[Outline of Selenium RC's Architecture]" />
   <p>Figure 16.8: Outline of Selenium RC's Architecture</p>
 </div>
 
@@ -1645,5 +1657,5 @@ returns the same result.</li>
 </ol>
 </div>
 
-</body>
+  </body>
 </html>

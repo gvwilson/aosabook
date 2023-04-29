@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): Twisted</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)Twisted</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>Twisted</h1>
-      <p class="author"><a href="intro2.html#mckellar-jessica">Jessica McKellar</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>Twisted</h1>
+
+  
+
+<p class="author">
+  
+  Jessica McKellar
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Twisted is an event-driven networking engine in Python. It was born in the
 early 2000s, when the writers of networked games had few scalable and no
 cross-platform libraries, in any language, at their disposal. The authors of
@@ -159,7 +171,7 @@ complete, each of which blocks while waiting for I/O to finish. Time
 spent blocking on I/O is greyed out.</p>
 
 <figure id="fig.twisted.threadingmodels">
-  <img src="../../images/twisted/threading_models.png" />
+  <img src="../../static/twisted/threading_models.png" />
   <figcaption>Figure 21.1: Threading models</figcaption>
 </figure>
 
@@ -454,7 +466,7 @@ stage of both chains. Diagrammatically, the callback chains look like
 <a href="#fig.twisted.callback">Figure 21.2</a>.</p>
 
 <figure id="fig.twisted.callback">
-  <img src="../../images/twisted/deferred.png" />
+  <img src="../../static/twisted/deferred.png" />
   <figcaption>Figure 21.2: Callback chains</figcaption>
 </figure>
 
@@ -1000,5 +1012,5 @@ project that continues to have very active development and adoption.</p>
 <p>Twisted looks forward to being the engine of your Internet for another ten
 years.</p>
 
-</body>
+  </body>
 </html>

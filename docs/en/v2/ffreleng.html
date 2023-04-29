@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): Firefox Release Engineering</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)Firefox Release Engineering</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>Firefox Release Engineering</h1>
-      <p class="author"><a href="intro2.html#atlee-chris">Chris AtLee</a>, <a href="intro2.html#blakk-lukas">Lukas Blakk</a>, <a href="intro2.html#oduinn-john">John O'Duinn</a>, and <a href="intro2.html#zambrano-gasparnian-armen">Armen Zambrano Gasparian</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>Firefox Release Engineering</h1>
+
+  
+
+<p class="author">
+  
+  Chris AtLee, Lukas Blakk, John O'Duinn, and Armen Zambrano Gasparian
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Recently, the Mozilla Release Engineering team has made numerous advances
 in release automation for Firefox. We have
 reduced the requirements for human involvement during signing and sending
@@ -68,7 +80,7 @@ builds, so let's start there.</p>
 <h2>2.1. Look <em>N</em> Ways Before You Start a Release</h2>
 
 <figure id="fig.ffreleng.getting">
-  <img src="../../images/ffreleng/gotobuild.png" />
+  <img src="../../static/ffreleng/gotobuild.png" />
   <figcaption>Figure 2.1: Getting from code to "Go to build"</figcaption>
 </figure>
 
@@ -135,7 +147,7 @@ designed our release automation accordingly.</p>
 </ol>
 
 <figure id="fig.ffreleng.timeline">
-  <a href="../../images/ffreleng/timeline.png"><img src="../../images/ffreleng/timelineSm.png" /></a>
+  <a href="../../static/ffreleng/timeline.png"><img src="../../static/ffreleng/timelineSm.png" /></a>
   <figcaption>Figure 2.2: Complete release timeline, using a chemspill as example</figcaption>
 </figure>
 
@@ -316,7 +328,7 @@ infrastructure by the time we start the final release builds.</p>
 <h2>2.3. Tagging, Building, and Source Tarballs</h2>
 
 <figure id="fig.ffreleng.tagging">
-  <img src="../../images/ffreleng/tagging.png" />
+  <img src="../../static/ffreleng/tagging.png" />
   <figcaption>Figure 2.3: Automated tagging</figcaption>
 </figure>
     
@@ -458,7 +470,7 @@ a long time to complete, and we had to restart from the beginning
 if anything failed out mid-way through. </p>
 
 <figure id="fig.ffreleng.repack">
-  <img src="../../images/ffreleng/repacksl10n.png" />
+  <img src="../../static/ffreleng/repacksl10n.png" />
   <figcaption>Figure 2.4: Repacking Firefox for each localization</figcaption>
 </figure>
 
@@ -537,7 +549,7 @@ engineers only in secure channels, often in person, to minimize the
 risk of exposure as much as possible.</p>
 
 <figure id="fig.ffreleng.signing">
-  <img src="../../images/ffreleng/signing.png" />
+  <img src="../../static/ffreleng/signing.png" />
   <figcaption>Figure 2.5: Signing Firefox installers</figcaption>
 </figure>
 
@@ -986,5 +998,5 @@ ongoing work, please see:</p>
 
 </ul>
 
-</body>
+  </body>
 </html>

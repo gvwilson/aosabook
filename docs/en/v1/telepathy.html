@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): Telepathy</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)Telepathy</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>Telepathy</h1>
-      <p class="author"><a href="intro1.html#madeley-danielle">Danielle Madeley</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>Telepathy</h1>
+
+  
+
+<p class="author">
+  
+  Danielle Madeley
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Telepathy<sup class="footnote"><a href="#footnote-1">1</a></sup> is a
 modular framework for real-time communications that handles voice, video, text, file
 transfer, and so on. What's unique about Telepathy is not that it abstracts the
@@ -135,7 +147,7 @@ and the Channel Dispatcher are both provided by a single process known
 as Mission Control.</p>
 
 <div class="figure" id="fig.telepathy.components">
-  <img src="../../images/telepathy/telepathy-components.png" alt="[Example Telepathy Components]" />
+  <img src="../../static/telepathy/telepathy-components.png" alt="[Example Telepathy Components]" />
   <p>Figure 20.1: Example Telepathy Components</p>
 </div>
 
@@ -203,7 +215,7 @@ Each interface provides methods, signals and properties that you can
 call, listen to, or request.</p>
 
 <div class="figure" id="fig.telepathy.conceptual">
-  <img src="../../images/telepathy/bus-hierarchy-conceptual.png" alt="[Conceptual Representation of Objects Published by a D-Bus Service]" />
+  <img src="../../static/telepathy/bus-hierarchy-conceptual.png" alt="[Conceptual Representation of Objects Published by a D-Bus Service]" />
   <p>Figure 20.2: Conceptual Representation of Objects Published by a D-Bus Service</p>
 </div>
 
@@ -330,7 +342,7 @@ order to simulate object inheritance for D-Bus objects.</p>
 </div>
 
 <div class="figure" id="fig.telepathy.dbustypes">
-  <img src="../../images/telepathy/telepathy-types-unpacked.png" alt="[D-Bus Types (ii) and a{sa(usuu)}]" />
+  <img src="../../static/telepathy/telepathy-types-unpacked.png" alt="[D-Bus Types (ii) and a{sa(usuu)}]" />
   <p>Figure 20.3: D-Bus Types (ii) and a{sa(usuu)}</p>
 </div>
 
@@ -812,7 +824,7 @@ request to request channels and have them handled by the best program
 available (e.g., launching a text chat from your email client).</p>
 
 <div class="figure" id="fig.telepathy.request">
-  <img src="../../images/telepathy/dispatching-model.png" alt="[Channel Request and Dispatching]" />
+  <img src="../../static/telepathy/dispatching-model.png" alt="[Channel Request and Dispatching]" />
   <p>Figure 20.4: Channel Request and Dispatching</p>
 </div>
 
@@ -1192,7 +1204,7 @@ possible to implement the old and new presence interfaces, and old and
 new text message interfaces via one set of methods.</p>
 
 <div class="figure" id="fig.telepathy.manager">
-  <img src="../../images/telepathy/cm.png" alt="[Example Connection Manager Architecture]" />
+  <img src="../../static/telepathy/cm.png" alt="[Example Connection Manager Architecture]" />
   <p>Figure 20.5: Example Connection Manager Architecture</p>
 </div>
 
@@ -1292,5 +1304,5 @@ to save space.</li>
 </ol>
 </div>
 
-</body>
+  </body>
 </html>

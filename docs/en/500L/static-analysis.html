@@ -3,31 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>500 Lines or Less: Static Analysis</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>500 Lines or LessStatic Analysis</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>500 Lines or Less<br>Static Analysis</h1>
-      <p class="author">Leah Hanson</p>
-    </div>
-    <div class="banner">
+  <h1>500 Lines or Less<br>Static Analysis</h1>
+
+  
+
+<p class="author">
+  
+  Leah Hanson
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
 
-    <p><em>Leah Hanson is a proud alumni of Hacker School and loves helping people learn about Julia. She blogs at <a href="http://blog.leahhanson.us/">http://blog.leahhanson.us/</a> and tweets at <a href="https://twitter.com/astrieanna">@astrieanna</a>.</em></p>
+<p><em>Leah Hanson is a proud alumni of Hacker School and loves helping people learn about Julia. She blogs at <a href="http://blog.leahhanson.us/">http://blog.leahhanson.us/</a> and tweets at <a href="https://twitter.com/astrieanna">@astrieanna</a>.</em></p>
 
 <h2 id="introduction">Introduction</h2>
 
@@ -278,7 +290,7 @@ julia&gt; e.typ
 julia&gt; e.args
 <span class="fl">3</span>-element <span class="dt">Array</span>{<span class="dt">Any</span>,<span class="fl">1</span>}:
  {:x,:y}                                                                                                                                                                                     
- {{:z},{{:x,<span class="dt">Int64</span>,<span class="fl">0</span>},{:y,<span class="dt">Int64</span>,<span class="fl">0</span>},{:z,<span class="dt">Int64</span>,<span class="fl">18</span>}},{}}                                                                                                                                         
+ {{:z},{{:x,<span class="dt">Int64</span>,<span class="fl">0</span>},{:y,<span class="dt">Int64</span>,<span class="fl">0</span>},{:z,<span class="dt">Int64</span>,<span class="fl">18</span>}},{}}
  :(<span class="kw">begin</span>  <span class="co"># none, line 2:</span>
         z = (top(box))(<span class="dt">Int64</span>,(top(add_int))(x::<span class="dt">Int64</span>,y::<span class="dt">Int64</span>))::<span class="dt">Int64</span> <span class="co"># line 3:</span>
         <span class="kw">return</span> (top(box))(<span class="dt">Int64</span>,(top(mul_int))(<span class="fl">2</span>,z::<span class="dt">Int64</span>))::<span class="dt">Int64</span>
@@ -857,5 +869,6 @@ check_locals(e::<span class="dt">Expr</span>) = isempty(unused_locals(e))</code>
 <p>In cases where that won’t work, the final fallback is writing a parser yourself; this is to be avoided when possible. It’s a lot of work to cover the full grammar of most programming languages, and you’ll have to update it yourself as new features are added to the language (rather than getting the updates automatically from upstream). Depending on the checks you want to do, you may be able to get away with parsing only some lines or a subset of language features, which would greatly decrease the cost of writing your own parser.</p>
 
 <p>Hopefully, your new understanding of how static analysis tools are written will help you understand the tools you use on your code, and maybe inspire you to write one of your own.</p>
+
   </body>
 </html>

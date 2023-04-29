@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): MediaWiki</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)MediaWiki</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>MediaWiki</h1>
-      <p class="author"><a href="intro2.html#harihareswara-sumana">Sumana Harihareswara</a> and <a href="intro2.html#paumier-guillaume">Guillaume Paumier</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>MediaWiki</h1>
+
+  
+
+<p class="author">
+  
+  Sumana Harihareswara and Guillaume Paumier
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>From the start, MediaWiki was developed specifically to be Wikipedia's
 software. Developers have worked to facilitate reuse by third-party
 users, but Wikipedia's influence and bias have shaped MediaWiki's
@@ -345,7 +357,7 @@ a database abstraction and a query abstraction layer that simplify
 database access for developers.</p>
 
 <figure id="fig.mediawiki.schema">
-  <a href="../../images/mediawiki/database-schema.png"><img src="../../images/mediawiki/database-schema.png" /></a>
+  <a href="../../static/mediawiki/database-schema.png"><img src="../../static/mediawiki/database-schema.png" /></a>
   <figcaption>Figure 12.1: Database schema</figcaption>
 </figure>
 
@@ -371,7 +383,7 @@ most notable being the decoupling of text storage and revision
 tracking in MediaWiki 1.5.</p>
 
 <figure id="fig.mediawiki.restructure">
-  <img src="../../images/mediawiki/database-restructure.png" />
+  <img src="../../static/mediawiki/database-restructure.png" />
   <figcaption>Figure 12.2: Main content tables in MediaWiki 1.4 and 1.5</figcaption>
 </figure>
 
@@ -1125,5 +1137,5 @@ Erik M&ouml;ller, Magnus Manske, Rob Lanphier, Amir Aharoni, Federico Leva,
 Graham Pearce and others for providing input and/or reviewing the
 content.</p>
 
-</body>
+  </body>
 </html>

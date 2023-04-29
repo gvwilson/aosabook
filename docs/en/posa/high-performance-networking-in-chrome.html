@@ -3,26 +3,38 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Performance of Open Source Software: High Performance Networking in Chrome</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Performance of Open Source SoftwareHigh Performance Networking in Chrome</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Performance of Open Source Applications<br>High Performance Networking in Chrome</h1>
-      <p class="author">Ilya Grigorik</p>
-    </div>
-    <div class="banner">
+  <h1>The Performance of Open Source Software<br>High Performance Networking in Chrome</h1>
+
+  
+
+<p class="author">
+  
+  Ilya Grigorik
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
@@ -556,7 +568,7 @@
 <p>Sometimes the author of a page is able to provide additional navigation, or page context, based on the structure or the layout of their site, and help the browser optimize the experience for the user. Chrome supports two such hints, which can be embedded in the markup of the page:</p>
 
 <pre><code>  &lt;link rel=&quot;subresource&quot; href=&quot;/javascript/myapp.js&quot;&gt;
-  &lt;link rel=&quot;prefetch&quot;    href=&quot;/images/big.jpeg&quot;&gt;</code></pre>
+  &lt;link rel=&quot;prefetch&quot;    href=&quot;/static/big.jpeg&quot;&gt;</code></pre>
 
 <p>Subresource and prefetch look very similar, but have very different semantics. When a link resource specifies its relationship as "prefetch", it is an indication to the browser that this resource might be needed in a future navigation. In other words, it is effectively a cross-page hint. By contrast, when a resource specifies the relationship as a "subresource", it is an early indication to the browser that the resource will be used on a current page, and that it may want to dispatch the request before it encounters it later in the document.</p>
 
@@ -631,5 +643,6 @@
 <li id="fn4"><p>Resources up to 16 <span class="caps">KB</span> in size are stored in shared data block-files, and larger files get their own dedicated files on disk.<a href="#fnref4">↩</a></p></li>
 </ol>
 </div>
+
   </body>
 </html>

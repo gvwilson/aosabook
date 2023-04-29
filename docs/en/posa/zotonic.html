@@ -3,31 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Performance of Open Source Software: Zotonic</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Performance of Open Source SoftwareZotonic</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Performance of Open Source Applications<br>Zotonic</h1>
-      <p class="author">Arjan Scherpenisse and Marc Worrell</p>
-    </div>
-    <div class="banner">
+  <h1>The Performance of Open Source Software<br>Zotonic</h1>
+
+  
+
+<p class="author">
+  
+  Arjan Scherpenisse and Marc Worrell
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
 
-    <h2 id="introduction-to-zotonic">Introduction to Zotonic</h2>
+<h2 id="introduction-to-zotonic">Introduction to Zotonic</h2>
 
 <p>Zotonic is an open source framework for doing full-stack web development, all the way from frontend to backend. Consisting of a small set of core functionalities, it implements a lightweight but extensible Content Management System on top. Zotonic’s main goal is to make it easy to create well-performing websites “out of the box”, so that a website scales well from the start.</p>
 
@@ -565,5 +577,6 @@ Cache-Control: public, max-age=315360000</code></pre>
 <li id="fn7"><p>Erlang can also <em>share</em> parts of a byte array with references to those parts, thus circumventing the need to copy that data. An insert into a byte array can be represented by an io-list of three parts: a references to the unchanged head bytes, the inserted value, and a reference to the unchanged tail bytes.<a href="#fnref7">↩</a></p></li>
 </ol>
 </div>
+
   </body>
 </html>

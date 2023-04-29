@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): Audacity</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)Audacity</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>Audacity</h1>
-      <p class="author"><a href="intro1.html#crook-james">James Crook</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>Audacity</h1>
+
+  
+
+<p class="author">
+  
+  James Crook
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Audacity is a popular sound recorder and audio editor.  It is a
 capable program while still being easy to use.  The majority of users
 are on Windows but the same Audacity source code compiles to run on
@@ -122,7 +134,7 @@ We have instead implemented scripting with a single plugin module and a
 pipe, which we will cover later.</p>
 
 <div class="figure" id="fig.aud.1">
-  <img src="../../images/audacity/Layers.png" alt="[Layers in Audacity]" />
+  <img src="../../static/audacity/Layers.png" alt="[Layers in Audacity]" />
   <p>Figure 2.1: Layers in Audacity</p>
 </div>
 
@@ -298,7 +310,7 @@ S.EndStatic();
 </pre>
 
 <div class="figure" id="fig.aud.2">
-  <img src="../../images/audacity/SomeDialog.png" alt="Example Dialog" />
+  <img src="../../static/audacity/SomeDialog.png" alt="Example Dialog" />
   <p>Figure 2.2: Example Dialog</p>
 </div>
 
@@ -341,7 +353,7 @@ using the built-in text box.  You might think these panels tracks and
 rulers should each be a wxWidgets component, but they are not.</p>
 
 <div class="figure" id="fig.aud.3">
-  <img src="../../images/audacity/MainPanelAnnotated.png" alt="[Audacity Interface with Track Panel Elements Labelled]" />
+  <img src="../../static/audacity/MainPanelAnnotated.png" alt="[Audacity Interface with Track Panel Elements Labelled]" />
   <p>Figure 2.3: Audacity Interface with Track Panel Elements Labelled</p>
 </div>
 
@@ -436,7 +448,7 @@ look similar, for example to have each running from a wxThread, we
 don't have that luxury (<a href="#fig.aud.4">Figure 2.4</a>).</p>
 
 <div class="figure" id="fig.aud.4">
-  <img src="../../images/audacity/Buffers.png" alt="[Threads and Buffers in Playback and Recording]" />
+  <img src="../../static/audacity/Buffers.png" alt="[Threads and Buffers in Playback and Recording]" />
   <p>Figure 2.4: Threads and Buffers in Playback and Recording</p>
 </div>
 
@@ -548,7 +560,7 @@ the management of unrolled linked lists.  <a href="#fig.aud.5">Figure 2.5</a> sh
 what happens in Audacity when removing a span of audio near the start.</p>
 
 <div class="figure" id="fig.aud.5">
-  <img src="../../images/audacity/BlocksCombined.png" alt="[Before deletion, .aup file and BlockFiles hold the sequence ABCDEFGHIJKLMNO. After deletion of FGHI, two BlockFiles are merged.]" />
+  <img src="../../static/audacity/BlocksCombined.png" alt="[Before deletion, .aup file and BlockFiles hold the sequence ABCDEFGHIJKLMNO. After deletion of FGHI, two BlockFiles are merged.]" />
   <p>Figure 2.5: Before deletion, <code>.aup</code> file and BlockFiles hold the sequence ABCDEFGHIJKLMNO. After deletion of FGHI, two BlockFiles are merged.</p>
 </div>
 
@@ -607,7 +619,7 @@ Audacity.  Audio and other high-volume data does not need to travel on
 the pipe (<a href="#fig.aud.7">Figure 2.6</a>).</p>
 
 <div class="figure" id="fig.aud.7">
-  <img src="../../images/audacity/Scripting.png" alt="[Scripting Plugin Provides Scripting Over a Named Pipe]" />
+  <img src="../../static/audacity/Scripting.png" alt="[Scripting Plugin Provides Scripting Over a Named Pipe]" />
   <p>Figure 2.6: Scripting Plugin Provides Scripting Over a Named Pipe</p>
 </div>
 
@@ -789,5 +801,5 @@ Audacity, but we have not yet had the time to make that change.</li>
 </ol>
 </div>
 
-</body>
+  </body>
 </html>

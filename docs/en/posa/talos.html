@@ -3,31 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Performance of Open Source Software: Talos</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Performance of Open Source SoftwareTalos</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Performance of Open Source Applications<br>Talos</h1>
-      <p class="author">Clint Talbert and Joel Maher</p>
-    </div>
-    <div class="banner">
+  <h1>The Performance of Open Source Software<br>Talos</h1>
+
+  
+
+<p class="author">
+  
+  Clint Talbert and Joel Maher
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
 
-    <p>At Mozilla, one of our very first automation systems was a performance testing framework we dubbed Talos. Talos had been faithfully maintained without substantial modification since its inception in 2007, even though many of the original assumptions and design decisions behind Talos were lost as ownership of the tool changed hands.</p>
+<p>At Mozilla, one of our very first automation systems was a performance testing framework we dubbed Talos. Talos had been faithfully maintained without substantial modification since its inception in 2007, even though many of the original assumptions and design decisions behind Talos were lost as ownership of the tool changed hands.</p>
 
 <p>In the summer of 2011, we finally began to look askance at the noise and the variation in the Talos numbers, and we began to wonder how we could make some small modification to the system to start improving it. We had no idea we were about to open Pandora’s Box.</p>
 
@@ -161,5 +173,6 @@
 <li id="fn3"><p>https://github.com/mozilla/datazilla/blob/2c369a346fe61072e52b07791492c815fe316291/vendor/dzmetrics/data_smoothing.py.<a href="#fnref3">↩</a></p></li>
 </ol>
 </div>
+
   </body>
 </html>

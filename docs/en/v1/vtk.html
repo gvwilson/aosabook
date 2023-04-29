@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): VTK</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)VTK</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>VTK</h1>
-      <p class="author"><a href="intro1.html#geveci-berk">Berk Geveci</a> and <a href="intro1.html#schroeder-will">Will Schroeder</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>VTK</h1>
+
+  
+
+<p class="author">
+  
+  Berk Geveci and Will Schroeder
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>The Visualization Toolkit (VTK) is a widely used software system for
 data processing and visualization. It is used in scientific computing,
 medical image analysis, computational geometry, rendering, image
@@ -309,7 +321,7 @@ subclasses of <code>vtkDataObject</code> as shown in
 diagram of the many data object classes).</p>
 
 <div class="figure" id="fig.vtk.dataclass">
-  <img src="../../images/vtk/dataclasses.png" alt="[Data Object Classes]" />
+  <img src="../../static/vtk/dataclasses.png" alt="[Data Object Classes]" />
   <p>Figure 24.1: Data Object Classes</p>
 </div>
 
@@ -324,7 +336,7 @@ represent meshes, and <code>vtkImageData</code> represents 2D and 3D pixel
 and voxel data.</p>
 
 <div class="figure" id="fig.vtk.dataset">
-  <img src="../../images/vtk/dataset.png" alt="[Data Set Classes]" />
+  <img src="../../static/vtk/dataset.png" alt="[Data Set Classes]" />
   <p>Figure 24.2: Data Set Classes</p>
 </div>
 
@@ -345,7 +357,7 @@ data and process objects (i.e., the
 pipeline). <a href="#fig.vtk.pipeline">Figure 24.3</a> depicts a typical pipeline.</p>
 
 <div class="figure" id="fig.vtk.pipeline">
-  <img src="../../images/vtk/pipeline.png" alt="[Typical Pipeline]" />
+  <img src="../../static/vtk/pipeline.png" alt="[Typical Pipeline]" />
   <p>Figure 24.3: Typical Pipeline</p>
 </div>
 
@@ -599,7 +611,7 @@ pipeline referred to as the "painter" pipeline illustrated in
 <a href="#fig.vtk.painter">Figure 24.4</a>.</p>
 
 <div class="figure" id="fig.vtk.painter">
-  <img src="../../images/vtk/painter.png" alt="[Display Classes]" />
+  <img src="../../static/vtk/painter.png" alt="[Display Classes]" />
   <p>Figure 24.4: Display Classes</p>
 </div>
 
@@ -985,5 +997,5 @@ analysis at <code class="url">http://www.ohloh.net/p/vtk/analyses/latest</code>.
 </ol>
 </div>
 
-</body>
+  </body>
 </html>

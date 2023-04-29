@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): Yesod</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)Yesod</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>Yesod</h1>
-      <p class="author"><a href="intro2.html#snoyman-michael">Michael Snoyman</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>Yesod</h1>
+
+  
+
+<p class="author">
+  
+  Michael Snoyman
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Yesod is a web framework written in the Haskell programming
 language. While many popular web frameworks exploit the dynamic nature
 of their host languages, Yesod exploits the static nature of Haskell
@@ -133,7 +145,7 @@ applications. The performance side will introduce us to a number of
 the cool features of Haskell.</p>
 
 <figure id="fig.yesod.overall">
-  <img src="../../images/yesod/overview.png" />
+  <img src="../../static/yesod/overview.png" />
   <figcaption>Figure 22.1: Overall structure of a Yesod application</figcaption>
 </figure>
 
@@ -263,7 +275,7 @@ as a framework on top of Warp. As can be seen, the Haskell servers
 (Warp, Happstack and Snap) lead the pack.</p>
 
 <figure id="fig.yesod.warp">
-  <img src="../../images/yesod/extra-large.png" />
+  <img src="../../static/yesod/extra-large.png" />
   <figcaption>Figure 22.2: Warp PONG benchmark</figcaption>
 </figure>
 
@@ -1130,5 +1142,5 @@ general Haskell community. The final lesson is:</p>
 <p><em>Consider early on how to make your project approachable for
 others.</em></p>
 
-</body>
+  </body>
 </html>

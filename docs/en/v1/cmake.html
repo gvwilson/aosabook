@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): CMake</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)CMake</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>CMake</h1>
-      <p class="author"><a href="intro1.html#hoffman-bill">Bill Hoffman</a> and <a href="intro1.html#martin-kenneth">Kenneth Martin</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>CMake</h1>
+
+  
+
+<p class="author">
+  
+  Bill Hoffman and Kenneth Martin
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>In 1999 the National Library of Medicine engaged a small company
 called Kitware to develop a better way to configure, build, and deploy
 complex software across many different platforms. This work was part
@@ -317,7 +329,7 @@ between different built tools.</p>
 <p>An overview of the process can be seen in <a href="#fig.cma.pro">Figure 5.1</a>.</p>
 
 <div class="figure" id="fig.cma.pro">
-  <img src="../../images/cmake/process.png" alt="[Overview of the CMake Process]" />
+  <img src="../../static/cmake/process.png" alt="[Overview of the CMake Process]" />
   <p>Figure 5.1: Overview of the CMake Process</p>
 </div>
 
@@ -336,7 +348,7 @@ and encapsulation.  The major C++ objects and their relationships can
 be seen in <a href="#fig.cma.obj">Figure 5.2</a>.</p>
 
 <div class="figure" id="fig.cma.obj">
-  <img src="../../images/cmake/objects.png" alt="[CMake Objects]" />
+  <img src="../../static/cmake/objects.png" alt="[CMake Objects]" />
   <p>Figure 5.2: CMake Objects</p>
 </div>
 
@@ -470,12 +482,12 @@ Cygwin. The Qt GUI is available on all platforms.  The GUIs can be
 seen in <a href="#fig.cma.gui1">Figure 5.3</a> and <a href="#fig.cma.gui2">Figure 5.4</a>.</p>
 
 <div class="figure" id="fig.cma.gui1">
-  <img src="../../images/cmake/GUI1.png" alt="[Command Line Interface]" />
+  <img src="../../static/cmake/GUI1.png" alt="[Command Line Interface]" />
   <p>Figure 5.3: Command Line Interface</p>
 </div>
 
 <div class="figure" id="fig.cma.gui2">
-  <img src="../../images/cmake/GUI2.png" alt="[Graphics-based Interface]" />
+  <img src="../../static/cmake/GUI2.png" alt="[Graphics-based Interface]" />
   <p>Figure 5.4: Graphics-based Interface</p>
 </div>
 
@@ -606,5 +618,5 @@ been a huge maintenance cost for the CMake project.</p>
 </ol>
 </div>
 
-</body>
+  </body>
 </html>

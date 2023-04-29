@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): Git</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)Git</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>Git</h1>
-      <p class="author"><a href="intro2.html#potter-susan">Susan Potter</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>Git</h1>
+
+  
+
+<p class="author">
+  
+  Susan Potter
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <h2>6.1. Git in a Nutshell</h2>
 
 <p>Git enables the maintenance of a digital body of work (often, but not limited
@@ -209,7 +221,7 @@ ancestors is its ability to directly support branching that will record
 most merge history cases.</p>
 
 <figure id="fig.git.dag">
-  <img src="../../images/git/dag-example.png" />
+  <img src="../../static/git/dag-example.png" />
   <figcaption>Figure 6.1: Example of a DAG representation in Git</figcaption>
 </figure>
 
@@ -532,7 +544,7 @@ object database.</p>
 <h2>6.6. The Object Database</h2>
 
 <figure id="fig.git.objects">
-  <img src="../../images/git/object-hierarchy.png" />
+  <img src="../../static/git/object-hierarchy.png" />
   <figcaption>Figure 6.2: Git objects</figcaption>
 </figure>
 
@@ -603,7 +615,7 @@ format, using an index file which points to offsets to locate specific objects i
 corresponding <em>packed</em> file.</p>
 
 <figure id="fig.git.pack">
-  <img src="../../images/git/packed-format.png" />
+  <img src="../../static/git/packed-format.png" />
   <figcaption>Figure 6.3: Diagram of a pack file with corresponding index file</figcaption>
 </figure>
 
@@ -640,7 +652,7 @@ number will supercede anything before it. Branching is not supported directly,
 only through an unenforced directory structure within the repository.</p>
 
 <figure id="fig.git.merge">
-  <img src="../../images/git/merge-history.png" />
+  <img src="../../static/git/merge-history.png" />
   <figcaption>Figure 6.4: Diagram showing merge history lineage</figcaption>
 </figure>
 
@@ -787,5 +799,5 @@ has made adopting Git harder for some developer teams.</p>
 of future development on the Git Core project, plus all the related open
 source projects that have been launched from it.</p>
 
-</body>
+  </body>
 </html>

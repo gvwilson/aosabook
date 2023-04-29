@@ -3,31 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Performance of Open Source Software: Parsing XML at the Speed of Light</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Performance of Open Source SoftwareParsing XML at the Speed of Light</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Performance of Open Source Applications<br>Parsing XML at the Speed of Light</h1>
-      <p class="author">Arseny Kapoulkine</p>
-    </div>
-    <div class="banner">
+  <h1>The Performance of Open Source Software<br>Parsing XML at the Speed of Light</h1>
+
+  
+
+<p class="author">
+  
+  Arseny Kapoulkine
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
 
-    <h2 id="preface">Preface</h2>
+<h2 id="preface">Preface</h2>
 
 <p><span class="caps">XML</span> is a standardized markup language that defines a set of rules for encoding hierarchically structured documents in a human-readable text-based format. <span class="caps">XML</span> is in widespread use, with documents ranging from very short and simple (such as <span class="caps">SOAP</span> queries) to multi-gigabyte documents (OpenStreetMap) with complicated data relationships (<span class="caps">COLLADA</span>). In order to process <span class="caps">XML</span> documents, users typically need a special library: an <span class="caps">XML</span> parser, which converts the document from text to internal representation. <span class="caps">XML</span> is a compromise between parsing performance, human readability and parsing-code complexity–therefore a fast <span class="caps">XML</span> parser can make the choice of <span class="caps">XML</span> as an underlying format for application data model more preferable.</p>
 
@@ -486,5 +498,6 @@ I don't want it to take up more than the rest of the page. -->
 <li id="fn20"><p>It is possible to do this without storing extra data using a page alignment that is larger than the page size (i.e., allocate all pages using a 64k allocations with 64k alignment), but it is not possible to use large allocation alignments in a portable way without huge memory overhead.<a href="#fnref20">↩</a></p></li>
 </ol>
 </div>
+
   </body>
 </html>

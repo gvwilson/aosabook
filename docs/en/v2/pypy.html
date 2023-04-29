@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): PyPy</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)PyPy</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>PyPy</h1>
-      <p class="author"><a href="intro2.html#peterson-benjamin">Benjamin Peterson</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>PyPy</h1>
+
+  
+
+<p class="author">
+  
+  Benjamin Peterson
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>PyPy is a Python implementation and a dynamic language implementation framework.</p>
 
 <p>This chapter assumes familiarity with some basic interpreter and compiler
@@ -155,7 +167,7 @@ itself written in (unrestricted) Python and intimately linked to the PyPy Python
 interpreter for reasons that will be illuminated shortly.</p>
 
 <figure id="fig.pypy.steps">
-  <img src="../../images/pypy/translation_steps.png" />
+  <img src="../../static/pypy/translation_steps.png" />
   <figcaption>Figure 19.1: Translation steps</figcaption>
 </figure>
 
@@ -204,7 +216,7 @@ def factorial(n):
 <p>The flow-graph for the function looks like this:</p>
 
 <figure id="fig.pypy.flowgraph">
-  <img src="../../images/pypy/flowgraph.png" />
+  <img src="../../static/pypy/flowgraph.png" />
   <figcaption>Figure 19.2: Flow-graph of factorial</figcaption>
 </figure>
 
@@ -469,7 +481,7 @@ meta-interpreter, it doesn't record any of the operations it executes. The
 process of guard failure is depicted in <a href="#fig.pypy.bail">Figure 19.3</a>.</p>
 
 <figure id="fig.pypy.bail">
-  <img src="../../images/pypy/guard_fails.png" />
+  <img src="../../static/pypy/guard_fails.png" />
   <figcaption>Figure 19.3: Bailing back to the interpreter on guard failure</figcaption>
 </figure>
 
@@ -576,7 +588,7 @@ bytecode to JIT IR to assembly. (The jitviewer is shown in
 how PyPy's many layers interact with each other.</p>
 
 <figure id="fig.pypy.jitviewer">
-  <img src="../../images/pypy/jitviewer.png" />
+  <img src="../../static/pypy/jitviewer.png" />
   <figcaption>Figure 19.4: The jitviewer showing Python bytecode and associated JIT IR operations</figcaption>
 </figure>
 
@@ -630,5 +642,5 @@ with new Python language features (or even new languages) easy. Because of its
 unique architecture, PyPy will play a large role in the future of Python and
 dynamic language implementation.</p>
 
-</body>
+  </body>
 </html>

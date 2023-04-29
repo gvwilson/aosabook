@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{'/static/aosa.css' | relative_url}}" type="text/css">
+    <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>{{page.volume}}{% if page.title %}{{page.title}}{% endif %}</title>
+  </head>
+  <body>
+    {% include titlebox.html %}
+{{ content }}
+  </body>
+</html>

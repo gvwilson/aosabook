@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): Moodle</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)Moodle</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>Moodle</h1>
-      <p class="author"><a href="intro2.html#hunt-tim">Tim Hunt</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>Moodle</h1>
+
+  
+
+<p class="author">
+  
+  Tim Hunt
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p><a href="http://moodle.org/">Moodle</a> is a web application used in educational settings. While this chapter will
 try to give an overview of all aspects of how Moodle works, it
 focuses on those areas where Moodle's design is particularly
@@ -67,7 +79,7 @@ structured in some way. For example they may be grouped into logical
 topics, or into weeks on a calendar.</p>
 
 <figure id="fig.moodle.course">
-  <img src="../../images/moodle/course.png" />
+  <img src="../../static/moodle/course.png" />
   <figcaption>Figure 13.1: Moodle course</figcaption>
 </figure>
 
@@ -80,7 +92,7 @@ would probably also have the infrastructure shown in
 <a href="#fig.moodle.uni">Figure 13.2</a>.</p>
 
 <figure id="fig.moodle.uni">
-  <img src="../../images/moodle/university.png" />
+  <img src="../../static/moodle/university.png" />
   <figcaption>Figure 13.2: Typical university systems architecture</figcaption>
 </figure>
 
@@ -421,7 +433,7 @@ contexts can also contain Course contexts. Finally, each activity in a
 course will have its own Module context.</p>
 
 <figure id="fig.moodle.contexts">
-  <img src="../../images/moodle/contexts.png" />
+  <img src="../../static/moodle/contexts.png" />
   <figcaption>Figure 13.3: Contexts</figcaption>
 </figure>
 
@@ -1106,5 +1118,5 @@ legacy scripts to a cleaner MVC architecture. This requires effort, but it seems
 necessary, the resources to implement these changes can be found in open source projects. From the user's point of view, the system gradually
 evolves with each major release.</p>
 
-</body>
+  </body>
 </html>

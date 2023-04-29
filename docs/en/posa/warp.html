@@ -3,26 +3,38 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Performance of Open Source Software: Warp</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Performance of Open Source SoftwareWarp</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Performance of Open Source Applications<br>Warp</h1>
-      <p class="author">Kazu Yamamoto, Michael Snoyman, and Andreas Voellmy</p>
-    </div>
-    <div class="banner">
+  <h1>The Performance of Open Source Software<br>Warp</h1>
+
+  
+
+<p class="author">
+  
+  Kazu Yamamoto, Michael Snoyman, and Andreas Voellmy
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
@@ -484,6 +496,7 @@ ResponseSource Status ResponseHeaders (Source (ResourceT IO) (Flush Builder))</c
 <p>Warp is a versatile web server library, providing efficient <span class="caps">HTTP</span> communication for a wide range of use cases. In order to achieve its high performance, optimizations have been performed at many levels, including network communications, thread management, and request parsing.</p>
 
 <p>Haskell has proven to be an amazing language for writing such a code base. Features like immutability by default make it easier to write thread-safe code and avoid extra buffer copying. The multi-threaded run time drastically simplifies the process of writing event-driven code. And <span class="caps">GHC</span>'s powerful optimizations mean that in many cases, we can write high-level code and still reap the benefits of high performance. Yet with all of this performance, our code base is still relatively tiny (/under 1300 <span class="caps">SLOC</span> at time of writing). If you are looking to write maintainable, efficient, concurrent code, Haskell should be a strong consideration.</p>
+
 
   </body>
 </html>

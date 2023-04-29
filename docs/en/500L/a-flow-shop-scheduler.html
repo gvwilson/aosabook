@@ -3,31 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>500 Lines or Less: A Flow Shop Scheduler</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>500 Lines or LessA Flow Shop Scheduler</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>500 Lines or Less<br>A Flow Shop Scheduler</h1>
-      <p class="author">Christian Muise</p>
-    </div>
-    <div class="banner">
+  <h1>500 Lines or Less<br>A Flow Shop Scheduler</h1>
+
+  
+
+<p class="author">
+  
+  Christian Muise
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
 
-    <p><em><a href="http://haz.ca">Dr. Christian Muise</a> is a Research Fellow with the <a href="http://groups.csail.mit.edu/mers/">MERS group</a> at <a href="http://www.csail.mit.edu/">MIT's CSAIL</a>. He is interested in a variety of topics including AI, data-driven projects, mapping, graph theory, and data visualization, as well as celtic music, carving, soccer, and coffee.</em></p>
+<p><em><a href="http://haz.ca">Dr. Christian Muise</a> is a Research Fellow with the <a href="http://groups.csail.mit.edu/mers/">MERS group</a> at <a href="http://www.csail.mit.edu/">MIT's CSAIL</a>. He is interested in a variety of topics including AI, data-driven projects, mapping, graph theory, and data visualization, as well as celtic music, carving, soccer, and coffee.</em></p>
 
 <h2 id="a-flow-shop-scheduler">A Flow Shop Scheduler</h2>
 
@@ -599,5 +611,6 @@ Strategy = namedtuple(<span class="st">&#39;Strategy&#39;</span>, [<span class="
 <p>The general intuition behind local search can be applied to a wide range of problems. We focused on (1) generating a neighbourhood of related solutions to a problem from one candidate solution, and (2) establishing ways to evaluate and compare solutions. With these two components in hand, we can use the local search paradigm to find a valuable solution when the best option is simply too difficult to compute.</p>
 
 <p>Rather than using any one strategy to solve the problem, we saw how a strategy can be chosen dynamically to shift during the solving process. This simple and powerful technique gives the program the ability to mix and match partial strategies for the problem at hand, and it also means that the developer does not have to hand-tailor the strategy.</p>
+
   </body>
 </html>

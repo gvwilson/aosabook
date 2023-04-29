@@ -1,31 +1,44 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en">
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): The Yocto Project</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)The Yocto Project</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>The Yocto Project</h1>
-      <p class="author"><a href="http://www.aosabook.org/en/intro2.html#flanagan-elizabeth">Elizabeth Flanagan</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>The Yocto Project</h1>
+
+  
+
+<p class="author">
+  
+  Elizabeth Flanagan
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>The Yocto Project is an open source
 project that provides a common starting point for
 developers of embedded Linux systems to create customized
@@ -100,7 +113,7 @@ definition for <code>core-image-minimal</code> from source as defined
 in the Yocto Project's metadata layer.</p>
 
 <figure id="fig.yocto.execution">
-  <img src="../../images/yocto/aosa1.jpg">
+  <img src="../../static/yocto/aosa1.jpg">
   <figcaption>Figure 23.1: High-level overview of Poky task execution</figcaption>
 </figure>
 
@@ -217,7 +230,7 @@ initial parsing of <code>bblayers.conf</code>. From here it adds
 additional recipes, classes and configuration to the build.</p>
 
 <figure id="fig.yocto.layering">
-  <img src="../../images/yocto/aosa2.jpg">
+  <img src="../../static/yocto/aosa2.jpg">
   <figcaption>Figure 23.2: Example of BitBake layering</figcaption>
 </figure>
 
@@ -373,7 +386,7 @@ processes during a build, as it was initially single-threaded, and to
 allow different user experiences.</p>
 
 <figure id="fig.yocto.ipc">
-  <img src="../../images/yocto/aosa3.jpg">
+  <img src="../../static/yocto/aosa3.jpg">
   <figcaption>Figure 23.3: Overview of BitBake IPC</figcaption>
 </figure>
 
@@ -691,5 +704,5 @@ Richard Purdie for his letting me pick his brain, both on historical
 and technical aspects of OE, and for his constant encouragement and
 guidance, especially with some of the dark magic of BitBake.</p>
 
-</body>
+  </body>
 </html>

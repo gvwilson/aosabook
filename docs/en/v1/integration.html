@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): Continuous Integration</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)Continuous Integration</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>Continuous Integration</h1>
-      <p class="author"><a href="intro1.html#brown-titus">C. Titus Brown</a> and <a href="intro1.html#canino-koning-rosangela">Rosangela Canino-Koning</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>Continuous Integration</h1>
+
+  
+
+<p class="author">
+  
+  C. Titus Brown and Rosangela Canino-Koning
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Continuous Integration (CI) systems are systems that build and test
 software automatically and regularly.  Though their primary benefit
 lies in avoiding long periods between build and test runs, CI systems
@@ -144,7 +156,7 @@ process itself and aspects of system health (CPU load, I/O load,
 memory usage, etc.)</p>
 
 <div class="figure" id="fig.integration.internal">
-  <img src="../../images/integration/ci-internal.png" alt="[Internals of a Continuous Integration System]" />
+  <img src="../../static/integration/ci-internal.png" alt="[Internals of a Continuous Integration System]" />
   <p>Figure 9.1: Internals of a Continuous Integration System</p>
 </div>
 
@@ -282,7 +294,7 @@ implement given the choice of architecture.</p>
 <h3>9.2.1. Implementation Model: Buildbot</h3>
 
 <div class="figure" id="fig.integration.buildbot">
-  <img src="../../images/integration/buildbot.png" alt="[Buildbot Architecture]" />
+  <img src="../../static/integration/buildbot.png" alt="[Buildbot Architecture]" />
   <p>Figure 9.2: Buildbot Architecture</p>
 </div>
 
@@ -355,7 +367,7 @@ communicated directly to the buildmaster.</p>
 <h3>9.2.2. Implementation Model: CDash</h3>
 
 <div class="figure" id="fig.integration.cdash">
-  <img src="../../images/integration/cdash.png" alt="[CDash Architecture]" />
+  <img src="../../static/integration/cdash.png" alt="[CDash Architecture]" />
   <p>Figure 9.3: CDash Architecture</p>
 </div>
 
@@ -448,7 +460,7 @@ as of January 2011 it is not yet fully developed.</p>
 <h3>9.2.4. Implementation Model: Pony-Build</h3>
 
 <div class="figure" id="fig.integration.pb">
-  <img src="../../images/integration/webhooks.png" alt="[Pony-Build Architecture]" />
+  <img src="../../static/integration/webhooks.png" alt="[Pony-Build Architecture]" />
   <p>Figure 9.4: Pony-Build Architecture</p>
 </div>
 
@@ -779,5 +791,5 @@ Laite, and Khushboo Shakya.</p>
 
 </div>
 
-</body>
+  </body>
 </html>

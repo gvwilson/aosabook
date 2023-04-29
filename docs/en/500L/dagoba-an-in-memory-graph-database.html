@@ -3,31 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>500 Lines or Less: Dagoba: An In-Memory Graph Database</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>500 Lines or LessDagoba: An In-Memory Graph Database</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>500 Lines or Less<br>Dagoba: An In-Memory Graph Database</h1>
-      <p class="author">Dann Toliver</p>
-    </div>
-    <div class="banner">
+  <h1>500 Lines or Less<br>Dagoba: An In-Memory Graph Database</h1>
+
+  
+
+<p class="author">
+  
+  Dann Toliver
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
 
-    <p><em><a href="https://twitter.com/dann">Dann</a> enjoys building things, like programming languages, databases, distributed systems, communities of smart friendly humans, and pony castles with his two year old.</em></p>
+<p><em><a href="https://twitter.com/dann">Dann</a> enjoys building things, like programming languages, databases, distributed systems, communities of smart friendly humans, and pony castles with his two year old.</em></p>
 
 <h2 id="prologue">Prologue</h2>
 
@@ -1178,5 +1190,6 @@ children = <span class="kw">function</span>(x) { <span class="kw">return</span> 
 <li id="fn34"><p>Not <em>too</em> interconnected, though—you'd like the number of edges to grow in direct proportion to the number of vertices. In other words, the average number of edges connected to a vertex shouldn't vary with the size of the graph. Most systems we'd consider putting in a graph database already have this property: if Loki had 100,000 additional grandchildren the degree of the Thor vertex wouldn't increase.<a href="#fnref34">↩</a></p></li>
 </ol>
 </div>
+
   </body>
 </html>

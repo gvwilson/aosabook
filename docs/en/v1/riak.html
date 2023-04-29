@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): Riak and Erlang/OTP</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)Riak and Erlang/OTP</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>Riak and Erlang/OTP</h1>
-      <p class="author"><a href="intro1.html#cesarini-francesco">Francesco Cesarini</a>, <a href="intro1.html#gross-andy">Andy Gross</a>, and <a href="intro1.html#sheehy-justin">Justin Sheehy</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>Riak and Erlang/OTP</h1>
+
+  
+
+<p class="author">
+  
+  Francesco Cesarini, Andy Gross, and Justin Sheehy
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Riak is a distributed, fault tolerant, open source database that
 illustrates how to build large scale systems using Erlang/OTP.  Thanks
 in large part to Erlang's support for massively scalable distributed
@@ -301,7 +313,7 @@ their children, both workers and other supervisors, creating what is
 called a supervision tree.</p>
 
 <div class="figure" id="fig.erlang.supervision">
-  <img src="../../images/riak/supervision-tree.png" alt="[OTP Riak Supervision Tree]" />
+  <img src="../../static/riak/supervision-tree.png" alt="[OTP Riak Supervision Tree]" />
   <p>Figure 15.1: OTP Riak Supervision Tree</p>
 </div>
 
@@ -1119,4 +1131,7 @@ stages in the writing of this chapter provided valuable feedback.</p>
 </div>
 
 </body>
+</html>
+
+  </body>
 </html>

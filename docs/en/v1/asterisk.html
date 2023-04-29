@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): Asterisk</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)Asterisk</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>Asterisk</h1>
-      <p class="author"><a href="intro1.html#bryant-russell">Russell Bryant</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>Asterisk</h1>
+
+  
+
+<p class="author">
+  
+  Russell Bryant
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Asterisk<sup class="footnote"><a href="#footnote-1">1</a></sup> is an open source telephony
 applications platform distributed under the GPLv2. In short, it is a
 server application for making, receiving, and performing custom
@@ -76,7 +88,7 @@ call scenario could be a caller interacting with voicemail, for
 example.</p>
 
 <div class="figure" id="fig.asterisk.simpleCall">
-  <img src="../../images/asterisk/singleChannel.png" alt="[A Single Call Leg, Represented by a Single Channel]" />
+  <img src="../../static/asterisk/singleChannel.png" alt="[A Single Call Leg, Represented by a Single Channel]" />
   <p>Figure 1.1: A Single Call Leg, Represented by a Single Channel</p>
 </div>
 
@@ -92,7 +104,7 @@ to the Asterisk system, so two channels exist for this call
 (<a href="#fig.asterisk.twoChannels">Figure 1.2</a>).</p>
 
 <div class="figure" id="fig.asterisk.twoChannels">
-  <img src="../../images/asterisk/twoChannels.png" alt="[Two Call Legs Represented by Two Channels]" />
+  <img src="../../static/asterisk/twoChannels.png" alt="[Two Call Legs Represented by Two Channels]" />
   <p>Figure 1.2: Two Call Legs Represented by Two Channels</p>
 </div>
 
@@ -148,7 +160,7 @@ bridge function for a channel is discussed in more detail in
 native bridge.</p>
 
 <div class="figure" id="fig.asterisk.nativeBridge">
-  <img src="../../images/asterisk/nativeBridge.png" alt="[Example of a Native Bridge]" />
+  <img src="../../static/asterisk/nativeBridge.png" alt="[Example of a Native Bridge]" />
   <p>Figure 1.3: Example of a Native Bridge</p>
 </div>
 
@@ -265,7 +277,7 @@ expands on this to show two bridged channels and how the channel
 technology implementations fit into the picture.</p>
 
 <div class="figure" id="fig.asterisk.channelLayers">
-  <img src="../../images/asterisk/channelLayers.png" alt="[Channel Technology and Abstract Channel Layers]" />
+  <img src="../../static/asterisk/channelLayers.png" alt="[Channel Technology and Abstract Channel Layers]" />
   <p>Figure 1.4: Channel Technology and Abstract Channel Layers</p>
 </div>
 
@@ -620,7 +632,7 @@ thread has the primary responsibility for handling the rest of the
 call (<a href="#fig.asterisk.callSetupSequence">Figure 1.5</a>).</p>
 
 <div class="figure" id="fig.asterisk.callSetupSequence">
-  <img src="../../images/asterisk/callSetupSequence.png" alt="[Call Setup Sequence Diagram]" />
+  <img src="../../static/asterisk/callSetupSequence.png" alt="[Call Setup Sequence Diagram]" />
   <p>Figure 1.5: Call Setup Sequence Diagram</p>
 </div>
 
@@ -673,7 +685,7 @@ transcode the audio, it will build a translation path of one or more
 codec translators to get from the source to the destination format.</p>
 
 <div class="figure" id="fig.asterisk.blockDiagramVoicemail">
-  <img src="../../images/asterisk/voicemail.png" alt="[A Call to VoicemailMain]" />
+  <img src="../../static/asterisk/voicemail.png" alt="[A Call to VoicemailMain]" />
   <p>Figure 1.6: A Call to <code>VoicemailMain</code></p>
 </div>
 
@@ -735,7 +747,7 @@ are answered, the bridging of the channels begins
 (<a href="#fig.asterisk.genericBridge">Figure 1.7</a>).</p>
 
 <div class="figure" id="fig.asterisk.genericBridge">
-  <img src="../../images/asterisk/bridgedCall.png" alt="[Block Diagram of a Bridged Call in a Generic Bridge]" />
+  <img src="../../static/asterisk/bridgedCall.png" alt="[Block Diagram of a Bridged Call in a Generic Bridge]" />
   <p>Figure 1.7: Block Diagram of a Bridged Call in a Generic Bridge</p>
 </div>
 
@@ -747,7 +759,7 @@ operations that are performed for an audio frame during a bridged
 call.</p>
 
 <div class="figure" id="fig.asterisk.frameProcessSequence">
-  <img src="../../images/asterisk/bridgeFrameProcessSequence.png" alt="[Sequence Diagram for Audio Frame Processing During a Bridge]" />
+  <img src="../../static/asterisk/bridgeFrameProcessSequence.png" alt="[Sequence Diagram for Audio Frame Processing During a Bridge]" />
   <p>Figure 1.8: Sequence Diagram for Audio Frame Processing During a Bridge</p>
 </div>
 
@@ -789,5 +801,5 @@ portions of the telephony market, including much larger installations.</p>
 </ol>
 </div>
 
-</body>
+  </body>
 </html>

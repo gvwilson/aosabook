@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): The Dynamic Language Runtime and the Iron Languages</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)The Dynamic Language Runtime and the Iron Languages</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>The Dynamic Language Runtime and the Iron Languages</h1>
-      <p class="author"><a href="intro2.html#hardy-jeff">Jeff Hardy</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>The Dynamic Language Runtime and the Iron Languages</h1>
+
+  
+
+<p class="author">
+  
+  Jeff Hardy
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>The Iron languages are an informal group of language implementations with
 "Iron" in their names, in honour of the first one, IronPython. All of these
 languages have at least one thing in common&mdash;they are dynamic languages that
@@ -398,7 +410,7 @@ and contains all of the necessary information about how to perform the
 operation.</p>
 
 <figure id="fig.ironlang.callsite">
-  <img src="../../images/ironlang/callsiteclass.png" />
+  <img src="../../static/ironlang/callsiteclass.png" />
   <figcaption>Figure 8.1: CallSite class diagram</figcaption>
 </figure>
 
@@ -410,7 +422,7 @@ involves invoking the .NET JIT), so the call site has a multi-level <em>call
 site cache</em> that stores the rules that have already been created for later use.</p>
 
 <figure id="fig.ironlang.flowchart">
-  <img src="../../images/ironlang/callsites.png" />
+  <img src="../../static/ironlang/callsites.png" />
   <figcaption>Figure 8.2: CallSite flowchart</figcaption>
 </figure>
 
@@ -555,7 +567,7 @@ concrete classes that implement the
 DLR identifies dynamic objects. </p>
 
 <figure id="fig.ironlang.class">
-  <img src="../../images/ironlang/idmop.png" />
+  <img src="../../static/ironlang/idmop.png" />
   <figcaption>Figure 8.3: IDMOP class diagram</figcaption>
 </figure>
 
@@ -757,5 +769,5 @@ compiler-as-a-service library code-named "Roslyn", which bears a striking
 resemblance to the IronPython and IronRuby hosting APIs.) But, thanks to the
 wonder of open source licensing, they will continue to survive and even thrive.</p>
 
-</body>
+  </body>
 </html>

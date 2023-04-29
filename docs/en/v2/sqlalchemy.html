@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): SQLAlchemy</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)SQLAlchemy</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>SQLAlchemy</h1>
-      <p class="author"><a href="intro2.html#bayer-michael">Michael Bayer</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>SQLAlchemy</h1>
+
+  
+
+<p class="author">
+  
+  Michael Bayer
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>SQLAlchemy is a database toolkit and object-relational mapping (ORM) system
 for the Python programming language, first introduced in 2005. From the
 beginning, it has sought to provide an end-to-end system for working with
@@ -119,7 +131,7 @@ the Core, and many developers and organizations build their applications on top
 of the Core directly.</p>
 
 <figure id="fig.sqlalchemy.layers">
-  <img src="../../images/sqlalchemy/layers.png" />
+  <img src="../../static/sqlalchemy/layers.png" />
   <figcaption>Figure 20.1: SQLAlchemy layer diagram</figcaption>
 </figure>
 
@@ -253,7 +265,7 @@ combinations.</p>
 other as well as to the DBAPI components.</p>
 
 <figure id="fig.sqlalchemy.engine">
-  <img src="../../images/sqlalchemy/engine.png" />
+  <img src="../../static/sqlalchemy/engine.png" />
   <figcaption>Figure 20.2: Engine, Connection, ResultProxy API</figcaption>
 </figure>
 
@@ -285,7 +297,7 @@ class then provides behaviors specific to the psycopg2 DBAPI, including
 unicode data handlers and server-side cursor behavior.</p>
 
 <figure id="fig.sqlalchemy.dialect">
-  <img src="../../images/sqlalchemy/dialect-simple.png" />
+  <img src="../../static/sqlalchemy/dialect-simple.png" />
   <figcaption>Figure 20.3: Simple Dialect/ExecutionContext hierarchy</figcaption>
 </figure>
 
@@ -300,7 +312,7 @@ functionality of <code>sqlalchemy.connectors.pyodbc</code> shared among
 pyodbc-specific dialects for MySQL and Microsoft SQL Server.</p>
 
 <figure id="fig.sqlalchemy.common">
-  <img src="../../images/sqlalchemy/common-dbapi.png" />
+  <img src="../../static/sqlalchemy/common-dbapi.png" />
   <figcaption>Figure 20.4: Common DBAPI behavior shared among dialect hierarchies</figcaption>
 </figure>
 
@@ -347,7 +359,7 @@ mostly from Martin Fowler's description of "Metadata Mapping" in
 some key elements of the <code>sqlalchemy.schema</code> package.</p>
 
 <figure id="fig.sqlalchemy.schema">
-  <img src="../../images/sqlalchemy/basic-schema.png" />
+  <img src="../../static/sqlalchemy/basic-schema.png" />
   <figcaption>Figure 20.5: Basic sqlalchemy.schema objects</figcaption>
 </figure>
 
@@ -366,7 +378,7 @@ constructs, but also as core syntactical units in the SQL expression language.
 This relationship is illustrated in <a href="#fig.sqlalchemy.crossover">Figure 20.6</a>.</p>
 
 <figure id="fig.sqlalchemy.crossover">
-  <img src="../../images/sqlalchemy/table-column-crossover.png" />
+  <img src="../../static/sqlalchemy/table-column-crossover.png" />
   <figcaption>Figure 20.6: The dual lives of Table and Column</figcaption>
 </figure>
 
@@ -412,7 +424,7 @@ tree is called <code>ClauseElement</code>, and <a href="#fig.sqlalchemy.expressi
 of <code>ClauseElement</code> to some key classes.</p>
 
 <figure id="fig.sqlalchemy.expression">
-  <img src="../../images/sqlalchemy/expression-hierarchy.png" />
+  <img src="../../static/sqlalchemy/expression-hierarchy.png" />
   <figcaption>Figure 20.7: Basic expression hierarchy</figcaption>
 </figure>
 
@@ -437,7 +449,7 @@ within the <code>_BindParam</code> construct, thus causing it to be rendered
 as a bound parameter marker in the SQL string using a question mark.</p>
 
 <figure id="fig.sqlalchemy.tree">
-  <img src="../../images/sqlalchemy/example-expression.png" />
+  <img src="../../static/sqlalchemy/example-expression.png" />
   <figcaption>Figure 20.8: Example expression tree</figcaption>
 </figure>
 
@@ -497,7 +509,7 @@ to define SQL language aspects specific to the target database.
 PostgreSQL dialect.</p>
 
 <figure id="fig.sqlalchemy.compiler">
-  <img src="../../images/sqlalchemy/compiler-hierarchy.png" />
+  <img src="../../static/sqlalchemy/compiler-hierarchy.png" />
   <figcaption>Figure 20.9: Compiler hierarchy, including PostgreSQL-specific implementation</figcaption>
 </figure>
 
@@ -512,7 +524,7 @@ collection of bound parameters with default values.   <a href="#fig.sqlalchemy.h
 the process of visit methods resulting in textual units.</p>
 
 <figure id="fig.sqlalchemy.hierarchy">
-  <img src="../../images/sqlalchemy/statement-compilation.png" />
+  <img src="../../static/sqlalchemy/statement-compilation.png" />
   <figcaption>Figure 20.10: Call hierarchy of a statement compilation</figcaption>
 </figure>
 
@@ -659,7 +671,7 @@ mapper(User, user_table, properties={
 <p>When the mapping is complete, the structure of objects related to the class is detailed in <a href="#fig.sqlalchemy.anatomy">Figure 20.11</a>.</p>
 
 <figure id="fig.sqlalchemy.anatomy">
-  <img src="../../images/sqlalchemy/mapper-components.png" />
+  <img src="../../static/sqlalchemy/mapper-components.png" />
   <figcaption>Figure 20.11: Anatomy of a mapping</figcaption>
 </figure>
 
@@ -763,7 +775,7 @@ method of <code>Query</code>.  It also shows generation of <em>row population</e
 and populate individual object attributes, a process which occurs within the <code>instances</code> method of <code>Query</code>.</p>
 
 <figure id="fig.sqlalchemy.loading">
-  <img src="../../images/sqlalchemy/query-loading.png" />
+  <img src="../../static/sqlalchemy/query-loading.png" />
   <figcaption>Figure 20.12: Traversal of loader strategies including a joined eager load</figcaption>
 </figure>
 
@@ -889,7 +901,7 @@ occur when using two database connections directly.</p>
 <a href="#fig.sqlalchemy.session">Figure 20.13</a> illustrates a <code>Session</code> and the primary structures it deals with.
 
 <figure id="fig.sqlalchemy.session">
-  <img src="../../images/sqlalchemy/session-overview.png" />
+  <img src="../../static/sqlalchemy/session-overview.png" />
   <figcaption>Figure 20.13: Session overview</figcaption>
 </figure>
 
@@ -1008,7 +1020,7 @@ that is, only certain elements must precede others.  <a href="#fig.sqlalchemy.to
 behavior of the topological sort.</p>
 
 <figure id="fig.sqlalchemy.toposort">
-  <img src="../../images/sqlalchemy/topological-sort.png" />
+  <img src="../../static/sqlalchemy/topological-sort.png" />
   <figcaption>Figure 20.14: Topological sort</figcaption>
 </figure>
 
@@ -1040,7 +1052,7 @@ intermediary step copies newly generated <code>User</code> primary key values in
 <code>user_id</code> foreign key column of each <code>Address</code> object.</p>
 
 <figure id="fig.sqlalchemy.organizing">
-  <img src="../../images/sqlalchemy/uow-mapper-buckets.png" />
+  <img src="../../static/sqlalchemy/uow-mapper-buckets.png" />
   <figcaption>Figure 20.15: Organizing objects by mapper</figcaption>
 </figure>
 
@@ -1069,7 +1081,7 @@ the bucket of <code>User</code> objects being broken up into individual per-obje
 resulting from the addition of a new <code>relationship</code> from <code>User</code> to itself called <code>contact</code>.</p>
 
 <figure id="fig.sqlalchemy.cyclesteps">
-  <img src="../../images/sqlalchemy/uow-element-buckets.png" />
+  <img src="../../static/sqlalchemy/uow-element-buckets.png" />
   <figcaption>Figure 20.16: Organizing reference cycles into individual steps</figcaption>
 </figure>
 
@@ -1117,5 +1129,5 @@ that the use of relational databases remains vibrant and progressive. The goal
 of SQLAlchemy is to demonstrate that relational databases, Python, and
 well-considered object models are all very much worthwhile development tools.</p>
 
-</body>
+  </body>
 </html>

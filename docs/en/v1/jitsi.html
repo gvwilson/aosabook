@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): Jitsi</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)Jitsi</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>Jitsi</h1>
-      <p class="author"><a href="intro1.html#ivov-emil">Emil Ivov</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>Jitsi</h1>
+
+  
+
+<p class="author">
+  
+  Emil Ivov
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Jitsi is an application that allows people to make video and voice
 calls, share their desktops, and exchange files and messages. More
 importantly it allows people to do this over a number of different
@@ -132,7 +144,7 @@ can discover whatever OSGi service they need to use, or register one
 themselves (<a href="#fig.jit.osgi">Figure 10.1</a>).</p>
 
 <div class="figure" id="fig.jit.osgi">
-  <img src="../../images/jitsi/OSGI.png" alt="[OSGi Bundle Activation]" />
+  <img src="../../static/jitsi/OSGI.png" alt="[OSGi Bundle Activation]" />
   <p>Figure 10.1: OSGi Bundle Activation</p>
 </div>
 
@@ -244,7 +256,7 @@ for a feature. However, none of the other bundles ever need to
 interact with them in any way (<a href="#fig.jit.pkgs">Figure 10.2</a>).</p>
 
 <div class="figure" id="fig.jit.pkgs">
-  <img src="../../images/jitsi/PKGs.png" alt="[Service Structure]" />
+  <img src="../../static/jitsi/PKGs.png" alt="[Service Structure]" />
   <p>Figure 10.2: Service Structure</p>
 </div>
 
@@ -427,7 +439,7 @@ any, which is why things like sending and receiving messages can be
 safely combined.</p>
 
 <div class="figure" id="fig.jit.ops">
-  <img src="../../images/jitsi/OperationSets.png" alt="[Operation Sets]" />
+  <img src="../../static/jitsi/OperationSets.png" alt="[Operation Sets]" />
   <p>Figure 10.3: Operation Sets</p>
 </div>
 
@@ -532,7 +544,7 @@ has to create two separate media streams and then connect each to the
 corresponding audio or video MediaDevice.</p>
 
 <div class="figure" id="fig.jit.media">
-  <img src="../../images/jitsi/Media.png" alt="[Media Streams For Different Devices]" />
+  <img src="../../static/jitsi/Media.png" alt="[Media Streams For Different Devices]" />
   <p>Figure 10.4: Media Streams For Different Devices</p>
 </div>
 
@@ -908,5 +920,5 @@ a non-default option.</li>
 </ol>
 </div>
 
-</body>
+  </body>
 </html>

@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): GNU Mailman</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)GNU Mailman</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>GNU Mailman</h1>
-      <p class="author"><a href="intro2.html#warsaw-barry">Barry Warsaw</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>GNU Mailman</h1>
+
+  
+
+<p class="author">
+  
+  Barry Warsaw
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p><a href="http://www.list.org">GNU Mailman</a> is free software for
 managing mailing lists.  Almost everybody who writes or uses free and
 open source software has encountered a mailing list.  Mailing
@@ -98,7 +110,7 @@ that is used to record and communicate state while a message is
 processed through the system.</p>
 
 <figure id="fig.mailman.mime">
-  <img src="../../images/mailman/mime.png" />
+  <img src="../../static/mailman/mime.png" />
   <figcaption>Figure 10.1: A MIME <code>multipart/mixed</code> message containing text, images, and an audio file</figcaption>
 </figure>
 
@@ -141,7 +153,7 @@ around by reference to the root message object.
 multipart message in <a href="#fig.mailman.mime">Figure 10.1</a>.</p>
 
 <figure id="fig.mailman.tree">
-  <img src="../../images/mailman/tree.png" />
+  <img src="../../static/mailman/tree.png" />
   <figcaption>Figure 10.2: Message object tree of a complex MIME email message</figcaption>
 </figure>
 
@@ -618,7 +630,7 @@ indication transitions which are taken unconditionally, regardless of
 whether the rule matches or not.</p>
 
 <figure id="fig.mailman.chain">
-  <img src="../../images/mailman/chains.png" />
+  <img src="../../static/mailman/chains.png" />
   <figcaption>Figure 10.3: Simplified view of default chains with their links</figcaption>
 </figure>
 
@@ -687,7 +699,7 @@ rules, handlers can and do modify the message.
 set of handlers (some handlers are omitted for simplicity).</p>
 
 <figure id="fig.mailman.pipeline">
-  <img src="../../images/mailman/pipeline.png" />
+  <img src="../../static/mailman/pipeline.png" />
   <figcaption>Figure 10.4: Pipeline queue handlers</figcaption>
 </figure>
 
@@ -987,5 +999,5 @@ especially knowledgeable about internationalization and the
 idiosyncrasies of Japanese mail user agents.  He will be greatly
 missed.</p>
 
-</body>
+  </body>
 </html>

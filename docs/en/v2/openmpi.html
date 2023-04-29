@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): Open MPI</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)Open MPI</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>Open MPI</h1>
-      <p class="author"><a href="intro2.html#squyres-jeff">Jeffrey M. Squyres</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>Open MPI</h1>
+
+  
+
+<p class="author">
+  
+  Jeffrey M. Squyres
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <h2>15.1. Background</h2>
 
 <p>Open MPI [<a href="bib2.html#open-mpi-general">GFB+04</a>] is an open source software
@@ -327,7 +339,7 @@ Not allowing abstraction to get in the way of performance.
 </ul>
 
 <figure id="fig.openmpi.layers">
-  <img src="../../images/openmpi/open-mpi-layers.png" />
+  <img src="../../static/openmpi/open-mpi-layers.png" />
   <figcaption>Figure 15.1: Abstraction layer architectural view of Open MPI showing its three main layers: OPAL, ORTE, and OMPI</figcaption>
 </figure>
 
@@ -413,7 +425,7 @@ Open MPI's set of layers, frameworks, and components is referred to as
 the Modular Component Architecture (MCA).</p>
 
 <figure id="fig.openmpi.mca">
-  <img src="../../images/openmpi/open-mpi-mca.png" />
+  <img src="../../static/openmpi/open-mpi-mca.png" />
   <figcaption>Figure 15.2: Framework architectural view of Open MPI, showing just a few of Open MPI's frameworks and components (i.e., plugins).  Each framework contains a <em>base</em> and one or more components.  This structure is replicated in each of the layers shown in <a href="#fig.openmpi.layers">Figure 15.1</a>.  The sample frameworks listed in this figure are spread across all three layers: <code>btl</code> and <code>coll</code> are in the OMPI layer, <code>plm</code> is in the ORTE layer, and <code>timer</code> is in the OPAL layer.</figcaption>
 </figure>
 
@@ -764,7 +776,7 @@ structures in the TCP BTL component, and how it generates one module
 for each of the three Ethernet devices.</p>
 
 <figure id="fig.openmpi.component.nesting">
-  <img src="../../images/openmpi/open-mpi-mca-struct-nesting.png" />
+  <img src="../../static/openmpi/open-mpi-mca-struct-nesting.png" />
   <figcaption>Figure 15.3: The left side shows the nesting of structures in the TCP BTL component. The right side shows how the component generates one module struct for each "up" Ethernet interface.</figcaption>
 </figure>
 
@@ -1037,5 +1049,5 @@ learned from the Open MPI project, I think they would be as follows:</p>
 
 </ul>
 
-</body>
+  </body>
 </html>

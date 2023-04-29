@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): Scalable Web Architecture and Distributed Systems</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)Scalable Web Architecture and Distributed Systems</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>Scalable Web Architecture and Distributed Systems</h1>
-      <p class="author"><a href="intro2.html#matsudaira-kate">Kate Matsudaira</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>Scalable Web Architecture and Distributed Systems</h1>
+
+  
+
+<p class="author">
+  
+  Kate Matsudaira
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Open source software has become a fundamental building block for some
 of the biggest websites. And as those websites have grown,
 best practices and guiding principles around their architectures have
@@ -191,7 +203,7 @@ performance) might provide.</p>
 <p><a href="#fig.distsys.1">Figure 1.1</a> is a simplified diagram of the functionality.</p>
 
 <figure id="fig.distsys.1">
-  <img src="../../images/distsys/imageHosting1.jpg" />
+  <img src="../../static/distsys/imageHosting1.jpg" />
   <figcaption>Figure 1.1: Simplified architecture diagram for image hosting application</figcaption>
 </figure>
 
@@ -260,7 +272,7 @@ so that web server could only handle 500 such simultaneous
 writes.</p>
 
 <figure id="fig.distsys.2">
-  <img src="../../images/distsys/imageHosting2.png" />
+  <img src="../../static/distsys/imageHosting2.png" />
   <figcaption>Figure 1.2: Splitting out reads and writes</figcaption>
 </figure>
 
@@ -357,7 +369,7 @@ images would be redundant, all potentially servicing requests. (See
 more on that below).</p>
 
 <figure id="fig.distsys.3">
-  <img src="../../images/distsys/imageHosting3.png" />
+  <img src="../../static/distsys/imageHosting3.png" />
   <figcaption>Figure 1.3: Image hosting application with redundancy</figcaption>
 </figure>
 
@@ -410,7 +422,7 @@ to maintain the range of IDs that are mapped to each of the servers
 (like an index).</p>
 
 <figure id="fig.distsys.4">
-  <img src="../../images/distsys/imageHosting4.png" />
+  <img src="../../static/distsys/imageHosting4.png" />
   <figcaption>Figure 1.4: Image hosting application with redundancy and partitioning</figcaption>
 </figure>
 
@@ -456,7 +468,7 @@ access to the data.</p>
 look something like <a href="#fig.distsys.5">Figure 1.5</a>.</p>
 
 <figure id="fig.distsys.5">
-  <img src="../../images/distsys/simpleWeb.png" />
+  <img src="../../static/distsys/simpleWeb.png" />
   <figcaption>Figure 1.5: Simple web applications</figcaption>
 </figure>
 
@@ -474,7 +486,7 @@ strategies and methods for making these types of services fast and
 scalable by providing fast access to data.</p>
 
 <figure id="fig.distsys.6">
-  <img src="../../images/distsys/overSimpleWeb.png" />
+  <img src="../../static/distsys/overSimpleWeb.png" />
   <figcaption>Figure 1.6: Oversimplified web application</figcaption>
 </figure>
 
@@ -491,7 +503,7 @@ This is similar to locating an image file
 somewhere on the file server in the image application example.</p>
 
 <figure id="fig.distsys.7">
-  <img src="../../images/distsys/accessingData.png" />
+  <img src="../../static/distsys/accessingData.png" />
   <figcaption>Figure 1.7: Accessing specific data</figcaption>
 </figure>
 
@@ -534,7 +546,7 @@ option is to insert a cache on your request layer node, as in
 <a href="#fig.distsys.8">Figure 1.8</a>.</p>
 
 <figure id="fig.distsys.8">
-  <img src="../../images/distsys/cache.png" />
+  <img src="../../static/distsys/cache.png" />
   <figcaption>Figure 1.8: Inserting a cache on your request layer node</figcaption>
 </figure>
 
@@ -547,7 +559,7 @@ cache on one request layer node could also be located both in memory
 to network storage).</p>
 
 <figure id="fig.distsys.9">
-  <img src="../../images/distsys/multipleCaches.png" />
+  <img src="../../static/distsys/multipleCaches.png" />
   <figcaption>Figure 1.9: Multiple caches</figcaption>
 </figure>
 
@@ -581,12 +593,12 @@ it is the responsibility of request nodes to retrieve any data that is
 not found in the cache.</p>
 
 <figure id="fig.distsys.10">
-  <img src="../../images/distsys/globalCache1.png" />
+  <img src="../../static/distsys/globalCache1.png" />
   <figcaption>Figure 1.10: Global cache where cache is responsible for retrieval</figcaption>
 </figure>
 
 <figure id="fig.distsys.11">
-  <img src="../../images/distsys/globalCache2.png" />
+  <img src="../../static/distsys/globalCache2.png" />
   <figcaption>Figure 1.11: Global cache where request nodes are responsible for retrieval</figcaption>
 </figure>
 
@@ -632,7 +644,7 @@ disappears and part of the cache is lost, the requests will just pull
 from the origin&mdash;so it isn't necessarily catastrophic!</p>
 
 <figure id="fig.distsys.12">
-  <img src="../../images/distsys/distributedCaching.png" />
+  <img src="../../static/distsys/distributedCaching.png" />
   <figcaption>Figure 1.12: Distributed cache</figcaption>
 </figure>
 
@@ -681,7 +693,7 @@ requests, log requests, or sometimes transform requests (by
 adding/removing headers, encrypting/decrypting, or compression).</p>
 
 <figure id="fig.distsys.13">
-  <img src="../../images/distsys/proxies.png" />
+  <img src="../../static/distsys/proxies.png" />
   <figcaption>Figure 1.13: Proxy server</figcaption>
 </figure>
 
@@ -712,7 +724,7 @@ confused here though, since many proxies are also caches (as it is a
 very logical place to put a cache), but not all caches act as proxies.</p>
 
 <figure id="fig.distsys.14">
-  <img src="../../images/distsys/collapseRequests.png" />
+  <img src="../../static/distsys/collapseRequests.png" />
   <figcaption>Figure 1.14: Using a proxy server to collapse requests</figcaption>
 </figure>
 
@@ -731,7 +743,7 @@ high load situations, or when you have limited caching, since they
 can essentially batch several requests into one.</p>
 
 <figure id="fig.distsys.15">
-  <img src="../../images/distsys/collapseRequestsSpatial.png" />
+  <img src="../../static/distsys/collapseRequestsSpatial.png" />
   <figcaption>Figure 1.15: Using a proxy to collapse requests for data that is spatially close together</figcaption>
 </figure>
 
@@ -778,7 +790,7 @@ you need some way to find the correct physical location of the desired
 data. Indexes are the best way to do this. </p>
 
 <figure id="fig.distsys.16">
-  <img src="../../images/distsys/indexes.jpg" />
+  <img src="../../static/distsys/indexes.jpg" />
   <figcaption>Figure 1.16: Indexes</figcaption>
 </figure>
 
@@ -801,7 +813,7 @@ map, moving you from one location to the next, and so forth, until
 you get the specific piece of data you want. (See <a href="#fig.distsys.17">Figure 1.17</a>.)</p>
 
 <figure id="fig.distsys.17">
-  <img src="../../images/distsys/multipleIndexes.jpg" />
+  <img src="../../static/distsys/multipleIndexes.jpg" />
   <figcaption>Figure 1.17: Many layers of indexes</figcaption>
 </figure>
 
@@ -885,7 +897,7 @@ of the request nodes, allowing the system to scale to service more
 requests by just adding nodes.</p>
 
 <figure id="fig.distsys.18">
-  <img src="../../images/distsys/loadBalancer.png" />
+  <img src="../../static/distsys/loadBalancer.png" />
   <figcaption>Figure 1.18: Load balancer</figcaption>
 </figure>
 
@@ -903,7 +915,7 @@ request to be routed to multiple load balancers as shown in
 <a href="#fig.distsys.19">Figure 1.19</a>.</p>
 
 <figure id="fig.distsys.19">
-  <img src="../../images/distsys/multipleLoadBalancers.png" />
+  <img src="../../static/distsys/multipleLoadBalancers.png" />
   <figcaption>Figure 1.19: Multiple load balancers</figcaption>
 </figure>
 
@@ -974,7 +986,7 @@ availability requires building asynchrony into the system; a
 common way to do that is with queues.</p>
 
 <figure id="fig.distsys.20">
-  <img src="../../images/distsys/synchronousRequest.png" />
+  <img src="../../static/distsys/synchronousRequest.png" />
   <figcaption>Figure 1.20: Synchronous request</figcaption>
 </figure>
 
@@ -1001,7 +1013,7 @@ problem effectively requires abstraction between the client's request
 and the actual work performed to service it.</p>
 
 <figure id="fig.distsys.21">
-  <img src="../../images/distsys/queues.png" />
+  <img src="../../static/distsys/queues.png" />
   <figcaption>Figure 1.21: Using queues to manage requests</figcaption>
 </figure>
 
@@ -1057,5 +1069,5 @@ new applications. This chapter covered just a few examples, barely
 scratching the surface, but there are many more&mdash;and there will only
 continue to be more innovation in the space.</p>
 
-</body>
+  </body>
 </html>

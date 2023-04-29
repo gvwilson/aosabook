@@ -3,31 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>500 Lines or Less: A Template Engine</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>500 Lines or LessA Template Engine</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>500 Lines or Less<br>A Template Engine</h1>
-      <p class="author">Ned Batchelder</p>
-    </div>
-    <div class="banner">
+  <h1>500 Lines or Less<br>A Template Engine</h1>
+
+  
+
+<p class="author">
+  
+  Ned Batchelder
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
 
-    <p><em>Ned Batchelder is a software engineer with a long career, currently working at edX to build open source software to educate the world. He's the maintainer of coverage.py, an organizer of Boston Python, and has spoken at many PyCons. He blogs at <a href="http://nedbatchelder.com">http://nedbatchelder.com</a>. He once had dinner at the White House.</em></p>
+<p><em>Ned Batchelder is a software engineer with a long career, currently working at edX to build open source software to educate the world. He's the maintainer of coverage.py, an organizer of Boston Python, and has spoken at many PyCons. He blogs at <a href="http://nedbatchelder.com">http://nedbatchelder.com</a>. He once had dinner at the White House.</em></p>
 
 <h2 id="introduction">Introduction</h2>
 
@@ -260,10 +272,6 @@ append_result(<span class="st">&quot;hello&quot;</span>)</code></pre>
 
 <p>The logical structures <code>{% if ... %}</code> and <code>{% for ... %}</code> are converted into Python conditionals and loops. The expression in the <code>{% if/for ... %}</code> tag will become the expression in the <code>if</code> or <code>for</code> statement, and the contents up until the <code>{% end... %}</code> tag will become the body of the statement.</p>
 
-<!-- [[[cog from cogutil import include ]]] -->
-
-<!-- [[[end]]] -->
-
 <h2 id="writing-the-engine">Writing the Engine</h2>
 
 <p>Now that we understand what the engine will do, let's walk through the implementation.</p>
@@ -306,8 +314,6 @@ text = templite.render({
 
 <p>A CodeBuilder object keeps a list of strings that will together be the final Python code. The only other state it needs is the current indentation level:</p>
 
-<!-- [[[cog include("templite.py", first="class CodeBuilder", numblanks=2) ]]] -->
-
 <pre class="sourceCode python"><code class="sourceCode python"><span class="kw">class</span> CodeBuilder(<span class="dt">object</span>):
     <span class="co">&quot;&quot;&quot;Build source code conveniently.&quot;&quot;&quot;</span>
 
@@ -315,11 +321,7 @@ text = templite.render({
         <span class="ot">self</span>.code = []
         <span class="ot">self</span>.indent_level = indent</code></pre>
 
-<!-- [[[end]]] -->
-
 <p>CodeBuilder doesn't do much. <code>add_line</code> adds a new line of code, which automatically indents the text to the current indentation level, and supplies a newline:</p>
-
-<!-- [[[cog include("templite.py", first="def add_line", numblanks=3, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">def</span> add_line(<span class="ot">self</span>, line):
         <span class="co">&quot;&quot;&quot;Add a line of source to the code.</span>
@@ -329,11 +331,7 @@ text = templite.render({
 <span class="co">        &quot;&quot;&quot;</span>
         <span class="ot">self</span>.code.extend([<span class="st">&quot; &quot;</span> * <span class="ot">self</span>.indent_level, line, <span class="st">&quot;</span><span class="ch">\n</span><span class="st">&quot;</span>])</code></pre>
 
-<!-- [[[end]]] -->
-
 <p><code>indent</code> and <code>dedent</code> increase or decrease the indentation level:</p>
-
-<!-- [[[cog include("templite.py", first="INDENT_STEP = 4", numblanks=3, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">    INDENT_STEP = <span class="dv">4</span>      <span class="co"># PEP8 says so!</span>
 
@@ -345,11 +343,7 @@ text = templite.render({
         <span class="co">&quot;&quot;&quot;Decrease the current indent for following lines.&quot;&quot;&quot;</span>
         <span class="ot">self</span>.indent_level -= <span class="ot">self</span>.INDENT_STEP</code></pre>
 
-<!-- [[[end]]] -->
-
 <p><code>add_section</code> is managed by another CodeBuilder object. This lets us keep a reference to a place in the code, and add text to it later. The <code>self.code</code> list is mostly a list of strings, but will also hold references to these sections:</p>
-
-<!-- [[[cog include("templite.py", first="def add_section", numblanks=1, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">def</span> add_section(<span class="ot">self</span>):
         <span class="co">&quot;&quot;&quot;Add a section, a sub-CodeBuilder.&quot;&quot;&quot;</span>
@@ -357,20 +351,12 @@ text = templite.render({
         <span class="ot">self</span>.code.append(section)
         <span class="kw">return</span> section</code></pre>
 
-<!-- [[[end]]] -->
-
 <p><code>__str__</code> produces a single string with all the code. This simply joins together all the strings in <code>self.code</code>. Note that because <code>self.code</code> can contain sections, this might call other <code>CodeBuilder</code> objects recursively:</p>
-
-<!-- [[[cog include("templite.py", first="def __str__", numblanks=1, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">def</span> <span class="ot">__str__</span>(<span class="ot">self</span>):
         <span class="kw">return</span> <span class="st">&quot;&quot;</span>.join(<span class="dt">str</span>(c) <span class="kw">for</span> c in <span class="ot">self</span>.code)</code></pre>
 
-<!-- [[[end]]] -->
-
 <p><code>get_globals</code> yields the final values by executing the code. This stringifies the object, executes it to get its definitions, and returns the resulting values:</p>
-
-<!-- [[[cog include("templite.py", first="def get_globals", numblanks=1, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">def</span> get_globals(<span class="ot">self</span>):
         <span class="co">&quot;&quot;&quot;Execute the code, and return a dict of globals it defines.&quot;&quot;&quot;</span>
@@ -382,8 +368,6 @@ text = templite.render({
         global_namespace = {}
         <span class="dt">exec</span>(python_source, global_namespace)
         <span class="kw">return</span> global_namespace</code></pre>
-
-<!-- [[[end]]] -->
 
 <p>This last method uses some exotic features of Python. The <code>exec</code> function executes a string containing Python code. The second argument to <code>exec</code> is a dictionary that will collect up the globals defined by the code. So for example, if we do this:</p>
 
@@ -414,8 +398,6 @@ global_namespace = {}
 
 <p>All of the work to compile the template into a Python function happens in the Templite constructor. First the contexts are saved away:</p>
 
-<!-- [[[cog include("templite.py", first="def __init__(self, text, ", numblanks=3, dedent=False) ]]] -->
-
 <pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">def</span> <span class="ot">__init__</span>(<span class="ot">self</span>, text, *contexts):
         <span class="co">&quot;&quot;&quot;Construct a Templite with the given `text`.</span>
 
@@ -427,8 +409,6 @@ global_namespace = {}
         <span class="kw">for</span> context in contexts:
             <span class="ot">self</span>.context.update(context)</code></pre>
 
-<!-- [[[end]]] -->
-
 <p>Notice we used <code>*contexts</code> as the parameter. The asterisk denotes that any number of positional arguments will be packed into a tuple and passed in as <code>contexts</code>. This is called argument unpacking, and means that the caller can provide a number of different context dictionaries. Now any of these calls are valid:</p>
 
 <pre class="sourceCode python"><code class="sourceCode python">t = Templite(template_text)
@@ -439,16 +419,10 @@ t = Templite(template_text, context1, context2)</code></pre>
 
 <p>To make our compiled function as fast as possible, we extract context variables into Python locals. We'll get those names by keeping a set of variable names we encounter, but we also need to track the names of variables defined in the template, the loop variables:</p>
 
-<!-- [[[cog include("templite.py", first="self.all_vars", numblanks=1, dedent=False) ]]] -->
-
 <pre class="sourceCode python"><code class="sourceCode python">        <span class="ot">self</span>.all_vars = <span class="dt">set</span>()
         <span class="ot">self</span>.loop_vars = <span class="dt">set</span>()</code></pre>
 
-<!-- [[[end]]] -->
-
 <p>Later we'll see how these get used to help construct the prologue of our function. First, we'll use the CodeBuilder class we wrote earlier to start to build our compiled function:</p>
-
-<!-- [[[cog include("templite.py", first="code = CodeBuilder", numblanks=2, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">        code = CodeBuilder()
 
@@ -459,8 +433,6 @@ t = Templite(template_text, context1, context2)</code></pre>
         code.add_line(<span class="st">&quot;append_result = result.append&quot;</span>)
         code.add_line(<span class="st">&quot;extend_result = result.extend&quot;</span>)
         code.add_line(<span class="st">&quot;to_str = str&quot;</span>)</code></pre>
-
-<!-- [[[end]]] -->
 
 <p>Here we construct our CodeBuilder object, and start writing lines into it. Our Python function will be called <code>render_function</code>, and will take two arguments: <code>context</code> is the data dictionary it should use, and <code>do_dots</code> is a function implementing dot attribute access.</p>
 
@@ -476,8 +448,6 @@ t = Templite(template_text, context1, context2)</code></pre>
 
 <p>Next we define an inner function to help us with buffering output strings:</p>
 
-<!-- [[[cog include("templite.py", first="buffered =", numblanks=1, dedent=False) ]]] -->
-
 <pre class="sourceCode python"><code class="sourceCode python">        buffered = []
         <span class="kw">def</span> flush_output():
             <span class="co">&quot;&quot;&quot;Force `buffered` to the code builder.&quot;&quot;&quot;</span>
@@ -486,8 +456,6 @@ t = Templite(template_text, context1, context2)</code></pre>
             <span class="kw">elif</span> <span class="dt">len</span>(buffered) &gt; <span class="dv">1</span>:
                 code.add_line(<span class="st">&quot;extend_result([</span><span class="ot">%s</span><span class="st">])&quot;</span> % <span class="st">&quot;, &quot;</span>.join(buffered))
             <span class="kw">del</span> buffered[:]</code></pre>
-
-<!-- [[[end]]] -->
 
 <p>As we create chunks of output that need to go into our compiled function, we need to turn them into function calls that append to our result. We'd like to combine repeated append calls into one extend call. This is another micro-optimization. To make this possible, we buffer the chunks.</p>
 
@@ -511,21 +479,14 @@ t = Templite(template_text, context1, context2)</code></pre>
 
 <p>Back to our Templite class. As we parse control structures, we want to check that they are properly nested. The <code>ops_stack</code> list is a stack of strings:</p>
 
-<!-- [[[cog include("templite.py", first="ops_stack", numblanks=1, dedent=False) ]]] -->
-
 <pre class="sourceCode python"><code class="sourceCode python">        ops_stack = []</code></pre>
-
-<!-- [[[end]]] -->
 
 <p>When we encounter an <code>{% if .. %}</code> tag (for example), we'll push <code>'if'</code> onto the stack. When we find an <code>{% endif %}</code> tag, we can pop the stack and report an error if there was no <code>'if'</code> at the top of the stack.</p>
 
 <p>Now the real parsing begins. We split the template text into a number of tokens using a regular expression, or <em>regex</em>. Regexes can be daunting: they are a very compact notation for complex pattern matching. They are also very efficient, since the complexity of matching the pattern is implemented in C in the regular expression engine, rather than in your own Python code. Here's our regex:</p>
 
-<!-- [[[cog include("templite.py", first="tokens =", numblanks=1, dedent=False) ]]] -->
-
 <pre class="sourceCode python"><code class="sourceCode python">        tokens = re.split(<span class="st">r&quot;(?s)(</span><span class="ot">{{</span><span class="st">.*?</span><span class="ot">}}</span><span class="st">|{%.*?%}|{#.*?#})&quot;</span>, text)</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>This looks complicated; let's break it down.</p>
 
@@ -555,49 +516,39 @@ t = Templite(template_text, context1, context2)</code></pre>
 
 <p>The compilation code is a loop over these tokens:</p>
 
-<!-- [[[cog include("templite.py", first="for token", numlines=1, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">        <span class="kw">for</span> token in tokens:</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>Each token is examined to see which of the four cases it is. Just looking at the first two characters is enough. The first case is a comment, which is easy to handle: just ignore it and move on to the next token:</p>
 
-<!-- [[[cog include("templite.py", first="if token.", numlines=3, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">            <span class="kw">if</span> token.startswith(<span class="st">&#39;{#&#39;</span>):
                 <span class="co"># Comment: ignore it and move on.</span>
                 <span class="kw">continue</span></code></pre>
 
-<!-- [[[end]]] -->
 
 <p>For the case of <code>{{...}}</code> expressions, we cut off the two braces at the front and back, strip off the white space, and pass the entire expression to <code>_expr_code</code>:</p>
 
-<!-- [[[cog include("templite.py", first="elif token.startswith('{{')", numlines=4, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">            <span class="kw">elif</span> token.startswith(<span class="st">&#39;</span><span class="ot">{{</span><span class="st">&#39;</span>):
                 <span class="co"># An expression to evaluate.</span>
                 expr = <span class="ot">self</span>._expr_code(token[<span class="dv">2</span>:-<span class="dv">2</span>].strip())
                 buffered.append(<span class="st">&quot;to_str(</span><span class="ot">%s</span><span class="st">)&quot;</span> % expr)</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>The <code>_expr_code</code> method will compile the template expression into a Python expression. We'll see that function later. We use the <code>to_str</code> function to force the expression's value to be a string, and add that to our result.</p>
 
 <p>The third case is the big one: <code>{% ... %}</code> tags. These are control structures that will become Python control structures. First we have to flush our buffered output lines, then we extract a list of words from the tag:</p>
-
-<!-- [[[cog include("templite.py", first="elif token.startswith('{%')", numlines=4, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">            <span class="kw">elif</span> token.startswith(<span class="st">&#39;{%&#39;</span>):
                 <span class="co"># Action tag: split into words and parse further.</span>
                 flush_output()
                 words = token[<span class="dv">2</span>:-<span class="dv">2</span>].strip().split()</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>Now we have three sub-cases, based on the first word in the tag: <code>if</code>, <code>for</code>, or <code>end</code>. The <code>if</code> case shows our simple error handling and code generation:</p>
 
-<!-- [[[cog include("templite.py", first="if words[0] == 'if'", numlines=7, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">                <span class="kw">if</span> words[<span class="dv">0</span>] == <span class="st">&#39;if&#39;</span>:
                     <span class="co"># An if statement: evaluate the expression to determine if.</span>
@@ -607,13 +558,11 @@ t = Templite(template_text, context1, context2)</code></pre>
                     code.add_line(<span class="st">&quot;if </span><span class="ot">%s</span><span class="st">:&quot;</span> % <span class="ot">self</span>._expr_code(words[<span class="dv">1</span>]))
                     code.indent()</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>The <code>if</code> tag should have a single expression, so the <code>words</code> list should have only two elements in it. If it doesn't, we use the <code>_syntax_error</code> helper method to raise a syntax error exception. We push <code>'if'</code> onto <code>ops_stack</code> so that we can check the <code>endif</code> tag. The expression part of the <code>if</code> tag is compiled to a Python expression with <code>_expr_code</code>, and is used as the conditional expression in a Python <code>if</code> statement.</p>
 
 <p>The second tag type is <code>for</code>, which will be compiled to a Python <code>for</code> statement:</p>
 
-<!-- [[[cog include("templite.py", first="elif words[0] == 'for'", numlines=13, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">                <span class="kw">elif</span> words[<span class="dv">0</span>] == <span class="st">&#39;for&#39;</span>:
                     <span class="co"># A loop: iterate over expression result.</span>
@@ -629,7 +578,6 @@ t = Templite(template_text, context1, context2)</code></pre>
                     )
                     code.indent()</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>We do a check of the syntax and push <code>'for'</code> onto the stack. The <code>_variable</code> method checks the syntax of the variable, and adds it to the set we provide. This is how we collect up the names of all the variables during compilation. Later we'll need to write the prologue of our function, where we'll unpack all the variable names we get from the context. To do that correctly, we need to know the names of all the variables we encountered, <code>self.all_vars</code>, and the names of all the variables defined by loops, <code>self.loop_vars</code>.</p>
 
@@ -637,7 +585,6 @@ t = Templite(template_text, context1, context2)</code></pre>
 
 <p>The last kind of tag we handle is an <code>end</code> tag; either <code>{% endif %}</code> or <code>{% endfor %}</code>. The effect on our compiled function source is the same: simply unindent to end the <code>if</code> or <code>for</code> statement that was started earlier:</p>
 
-<!-- [[[cog include("templite.py", first="elif words[0].startswith('end')", numlines=11, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">                <span class="kw">elif</span> words[<span class="dv">0</span>].startswith(<span class="st">&#39;end&#39;</span>):
                     <span class="co"># Endsomething.  Pop the ops stack.</span>
@@ -651,29 +598,24 @@ t = Templite(template_text, context1, context2)</code></pre>
                         <span class="ot">self</span>._syntax_error(<span class="st">&quot;Mismatched end tag&quot;</span>, end_what)
                     code.dedent()</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>Notice here that the actual work needed for the end tag is one line: unindent the function source. The rest of this clause is all error checking to make sure that the template is properly formed. This isn't unusual in program translation code.</p>
 
 <p>Speaking of error handling, if the tag isn't an <code>if</code>, a <code>for</code>, or an <code>end</code>, then we don't know what it is, so raise a syntax error:</p>
 
-<!-- [[[cog include("templite.py", first="else:", numlines=2, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">                <span class="kw">else</span>:
                     <span class="ot">self</span>._syntax_error(<span class="st">&quot;Don&#39;t understand tag&quot;</span>, words[<span class="dv">0</span>])</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>We're done with the three different special syntaxes (<code>{{...}}</code>, <code>{#...#}</code>, and <code>{%...%}</code>). What's left is literal content. We'll add the literal string to the buffered output, using the <code>repr</code> built-in function to produce a Python string literal for the token:</p>
 
-<!-- [[[cog include("templite.py", first="else:", after="Don't understand tag", numblanks=1, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">            <span class="kw">else</span>:
                 <span class="co"># Literal content.  If it isn&#39;t empty, output it.</span>
                 <span class="kw">if</span> token:
                     buffered.append(<span class="dt">repr</span>(token))</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>If we didn't use <code>repr</code>, then we'd end up with lines like this in our compiled function:</p>
 
@@ -691,14 +633,12 @@ t = Templite(template_text, context1, context2)</code></pre>
 
 <p>That completes the loop over all the tokens in the template. When the loop is done, all of the template has been processed. We have one last check to make: if <code>ops_stack</code> isn't empty, then we must be missing an end tag. Then we flush the buffered output to the function source:</p>
 
-<!-- [[[cog include("templite.py", first="if ops_stack:", numblanks=2, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">        <span class="kw">if</span> ops_stack:
             <span class="ot">self</span>._syntax_error(<span class="st">&quot;Unmatched action tag&quot;</span>, ops_stack[-<span class="dv">1</span>])
 
         flush_output()</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>We had created a section at the beginning of the function. Its role was to unpack template variables from the context into Python locals. Now that we've processed the entire template, we know the names of all the variables, so we can write the lines in this prologue.</p>
 
@@ -717,33 +657,27 @@ t = Templite(template_text, context1, context2)</code></pre>
 
 <p>All the variables used in the template are in the set <code>all_vars</code>, and all the variables defined in the template are in <code>loop_vars</code>. All of the names in <code>loop_vars</code> have already been defined in the code because they are used in loops. So we need to unpack any name in <code>all_vars</code> that isn't in <code>loop_vars</code>:</p>
 
-<!-- [[[cog include("templite.py", first="for var_name", numblanks=1, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">        <span class="kw">for</span> var_name in <span class="ot">self</span>.all_vars - <span class="ot">self</span>.loop_vars:
             vars_code.add_line(<span class="st">&quot;c_</span><span class="ot">%s</span><span class="st"> = context[</span><span class="ot">%r</span><span class="st">]&quot;</span> % (var_name, var_name))</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>Each name becomes a line in the function's prologue, unpacking the context variable into a suitably named local variable.</p>
 
 <p>We're almost done compiling the template into a Python function. Our function has been appending strings to <code>result</code>, so the last line of the function is simply to join them all together and return them:</p>
 
-<!-- [[[cog include("templite.py", first='code.add_line("return', numlines=2, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">        code.add_line(<span class="st">&quot;return &#39;&#39;.join(result)&quot;</span>)
         code.dedent()</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>Now that we've finished writing the source for our compiled Python function, we need to get the function itself from our CodeBuilder object. The <code>get_globals</code> method executes the Python code we've been assembling. Remember that our code is a function definition (starting with <code>def render_function(..):</code>), so executing the code will define <code>render_function</code>, but not execute the body of <code>render_function</code>.</p>
 
 <p>The result of <code>get_globals</code> is the dictionary of values defined in the code. We grab the <code>render_function</code> value from it, and save it as an attribute in our Templite object:</p>
 
-<!-- [[[cog include("templite.py", first="self._render_function =", numlines=1, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">        <span class="ot">self</span>._render_function = code.get_globals()[<span class="st">&#39;render_function&#39;</span>]</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>Now <code>self._render_function</code> is a callable Python function. We'll use it later, during the rendering phase.</p>
 
@@ -759,16 +693,13 @@ t = Templite(template_text, context1, context2)</code></pre>
 
 <p>Our <code>_expr_code</code> method will handle all of these possibilities. As with expressions in any language, ours are built recursively: big expressions are composed of smaller expressions. A full expression is pipe-separated, where the first piece is dot-separated, and so on. So our function naturally takes a recursive form:</p>
 
-<!-- [[[cog include("templite.py", first="def _expr_code", numlines=2, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">def</span> _expr_code(<span class="ot">self</span>, expr):
         <span class="co">&quot;&quot;&quot;Generate a Python expression for `expr`.&quot;&quot;&quot;</span></code></pre>
 
-<!-- [[[end]]] -->
 
 <p>The first case to consider is that our expression has pipes in it. If it does, then we split it into a list of pipe-pieces. The first pipe-piece is passed recursively to <code>_expr_code</code> to convert it into a Python expression.</p>
 
-<!-- [[[cog include("templite.py", first="if ", after="def _expr_code", numlines=6, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">        <span class="kw">if</span> <span class="st">&quot;|&quot;</span> in expr:
             pipes = expr.split(<span class="st">&quot;|&quot;</span>)
@@ -777,13 +708,11 @@ t = Templite(template_text, context1, context2)</code></pre>
                 <span class="ot">self</span>._variable(func, <span class="ot">self</span>.all_vars)
                 code = <span class="st">&quot;c_</span><span class="ot">%s</span><span class="st">(</span><span class="ot">%s</span><span class="st">)&quot;</span> % (func, code)</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>Each of the remaining pipe pieces is the name of a function. The value is passed through the function to produce the final value. Each function name is a variable that gets added to <code>all_vars</code> so that we can extract it properly in the prologue.</p>
 
 <p>If there were no pipes, there might be dots. If so, split on the dots. The first part is passed recursively to <code>_expr_code</code> to turn it into a Python expression, then each dot name is handled in turn:</p>
 
-<!-- [[[cog include("templite.py", first="elif ", after="def _expr_code", numlines=5, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">        <span class="kw">elif</span> <span class="st">&quot;.&quot;</span> in expr:
             dots = expr.split(<span class="st">&quot;.&quot;</span>)
@@ -791,7 +720,6 @@ t = Templite(template_text, context1, context2)</code></pre>
             args = <span class="st">&quot;, &quot;</span>.join(<span class="dt">repr</span>(d) <span class="kw">for</span> d in dots[<span class="dv">1</span>:])
             code = <span class="st">&quot;do_dots(</span><span class="ot">%s</span><span class="st">, </span><span class="ot">%s</span><span class="st">)&quot;</span> % (code, args)</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>To understand how dots get compiled, remember that <code>x.y</code> in the template could mean either <code>x['y']</code> or <code>x.y</code> in Python, depending on which works; if the result is callable, it's called. This uncertainty means that we have to try those possibilities at run time, not compile time. So we compile <code>x.y.z</code> into a function call, <code>do_dots(x, 'y', 'z')</code>. The dot function will try the various access methods and return the value that succeeded.</p>
 
@@ -799,30 +727,25 @@ t = Templite(template_text, context1, context2)</code></pre>
 
 <p>The last clause in the <code>_expr_code</code> function handles the case that there was no pipe or dot in the input expression. In that case, it's just a name. We record it in <code>all_vars</code>, and access the variable using its prefixed Python name:</p>
 
-<!-- [[[cog include("templite.py", first="else:", after="def _expr_code", numlines=4, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">        <span class="kw">else</span>:
             <span class="ot">self</span>._variable(expr, <span class="ot">self</span>.all_vars)
             code = <span class="st">&quot;c_</span><span class="ot">%s</span><span class="st">&quot;</span> % expr
         <span class="kw">return</span> code</code></pre>
 
-<!-- [[[end]]] -->
 
 <h4 id="helper-functions">Helper Functions</h4>
 
 <p>During compilation, we used a few helper functions. The <code>_syntax_error</code> method simply puts together a nice error message and raises the exception:</p>
 
-<!-- [[[cog include("templite.py", first="def _syntax_error", numblanks=1, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">def</span> _syntax_error(<span class="ot">self</span>, msg, thing):
         <span class="co">&quot;&quot;&quot;Raise a syntax error using `msg`, and showing `thing`.&quot;&quot;&quot;</span>
         <span class="kw">raise</span> TempliteSyntaxError(<span class="st">&quot;</span><span class="ot">%s</span><span class="st">: </span><span class="ot">%r</span><span class="st">&quot;</span> % (msg, thing))</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>The <code>_variable</code> method helps us with validating variable names and adding them to the sets of names we collected during compilation. We use a regex to check that the name is a valid Python identifier, then add the name to the set:</p>
 
-<!-- [[[cog include("templite.py", first="def _variable", numblanks=4, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">def</span> _variable(<span class="ot">self</span>, name, vars_set):
         <span class="co">&quot;&quot;&quot;Track that `name` is used as a variable.</span>
@@ -836,7 +759,6 @@ t = Templite(template_text, context1, context2)</code></pre>
             <span class="ot">self</span>._syntax_error(<span class="st">&quot;Not a valid name&quot;</span>, name)
         vars_set.add(name)</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>With that, the compilation code is done!</p>
 
@@ -844,7 +766,6 @@ t = Templite(template_text, context1, context2)</code></pre>
 
 <p>All that's left is to write the rendering code. Since we've compiled our template to a Python function, the rendering code doesn't have much to do. It has to get the data context ready, and then call the compiled Python code:</p>
 
-<!-- [[[cog include("templite.py", first="def render(", numblanks=3, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">def</span> render(<span class="ot">self</span>, context=<span class="ot">None</span>):
         <span class="co">&quot;&quot;&quot;Render this template by applying it to `context`.</span>
@@ -858,7 +779,6 @@ t = Templite(template_text, context1, context2)</code></pre>
             render_context.update(context)
         <span class="kw">return</span> <span class="ot">self</span>._render_function(render_context, <span class="ot">self</span>._do_dots)</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>Remember that when we constructed the <code>Templite</code> object, we started with a data context. Here we copy it, and merge in whatever data has been passed in for this rendering. The copying is so that successive rendering calls won't see each others' data, and the merging is so that we have a single dictionary to use for data lookups. This is how we build one unified data context from the contexts provided when the template was constructed, with the data provided now at render time.</p>
 
@@ -866,7 +786,6 @@ t = Templite(template_text, context1, context2)</code></pre>
 
 <p>Then we simply call our compiled <code>render_function</code>. The first argument is the complete data context, and the second argument is the function that will implement the dot semantics. We use the same implementation every time: our own <code>_do_dots</code> method.</p>
 
-<!-- [[[cog include("templite.py", first="def _do_dots", numblanks=1, dedent=False) ]]] -->
 
 <pre class="sourceCode python"><code class="sourceCode python">    <span class="kw">def</span> _do_dots(<span class="ot">self</span>, value, *dots):
         <span class="co">&quot;&quot;&quot;Evaluate dotted expressions at runtime.&quot;&quot;&quot;</span>
@@ -879,7 +798,6 @@ t = Templite(template_text, context1, context2)</code></pre>
                 value = value()
         <span class="kw">return</span> value</code></pre>
 
-<!-- [[[end]]] -->
 
 <p>During compilation, a template expression like <code>x.y.z</code> gets turned into <code>do_dots(x, 'y', 'z')</code>. This function loops over the dot-names, and for each one tries it as an attribute, and if that fails, tries it as a key. This is what gives our single template syntax the flexibility to act as either <code>x.y</code> or <code>x['y']</code>. At each step, we also check if the new value is callable, and if it is, we call it. Once we're done with all the dot-names, the value in hand is the value we want.</p>
 
@@ -910,5 +828,6 @@ t = Templite(template_text, context1, context2)</code></pre>
 <h2 id="summing-up">Summing up</h2>
 
 <p>In 252 lines, we've got a simple yet capable template engine. Real template engines have many more features, but this code lays out the basic ideas of the process: compile the template to a Python function, then execute the function to produce the text result.</p>
+
   </body>
 </html>

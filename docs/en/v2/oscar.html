@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): OSCAR</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)OSCAR</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>OSCAR</h1>
-      <p class="author"><a href="intro2.html#ruttan-jennifer">Jennifer Ruttan</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>OSCAR</h1>
+
+  
+
+<p class="author">
+  
+  Jennifer Ruttan
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Since their initial adoption, EMR (electronic medical record) systems
 have attempted to bridge the gap between the physical and digital
 worlds of patient care. Governments in countries around the world have
@@ -527,7 +539,7 @@ are sent. The process isn't exactly like delta patching, but it's
 close.</p>
 
 <figure id="fig.oscar.integrator">
-  <img src="../../images/oscar/integratoroscar.png" />
+  <img src="../../static/oscar/integratoroscar.png" />
   <figcaption>Figure 16.1: Data exchange between OSCARs and Integrator</figcaption>
 </figure>
 
@@ -548,7 +560,7 @@ have to send a request to the Integrator every time it wants to see
 this data, but the local cache expires every hour.</p>
 
 <figure id="fig.oscar.datatransfer">
-  <img src="../../images/oscar/integratorupload.png" />
+  <img src="../../static/oscar/integratorupload.png" />
   <figcaption>Figure 16.2: The Demographic information and associated data is sent to the Integrator during a data push from the home clinic. The record on the Integrator may not be a representation of the complete record from the home clinic as the OSCAR can choose not to send all patient data.</figcaption>
 </figure>
 
@@ -562,7 +574,7 @@ data&mdash;to the patient record, and sent to the Integrator&mdash;but not
 permanently stored on any remote machine.</p>
 
 <figure id="fig.oscar.request">
-  <img src="../../images/oscar/integratordemodownload.png" />
+  <img src="../../static/oscar/integratordemodownload.png" />
   <figcaption>Figure 16.3: A remote OSCAR requests data from the Integrator by asking for a specific patient record. The Integrator server sends only the demographic information, which is stored permanently on the remote OSCAR.</figcaption>
 </figure>
 
@@ -580,7 +592,7 @@ chart. They can see the chart while they're interacting with you, but
 you take it home with you when you leave.</p>
 
 <figure id="fig.oscar.reply">
-  <img src="../../images/oscar/integratordataretrieval.png" />
+  <img src="../../static/oscar/integratordataretrieval.png" />
   <figcaption>Figure 16.4: A remote clinic can see the contents of a patient chart by asking for the data; if the appropriate consent is present, the data is sent. The data is never stored permanently on the remote OSCAR.</figcaption>
 </figure>
 
@@ -750,5 +762,5 @@ sure that what we deliver is something that improves the lives of the
 physicians who use OSCAR as well as the lives of their patients, by
 creating better tools to help manage healthcare.</p>
 
-</body>
+  </body>
 </html>

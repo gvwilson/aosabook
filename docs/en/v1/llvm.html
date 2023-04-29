@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): LLVM</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)LLVM</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>LLVM</h1>
-      <p class="author"><a href="intro1.html#lattner-chris">Chris Lattner</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>LLVM</h1>
+
+  
+
+<p class="author">
+  
+  Chris Lattner
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>This chapter discusses some of the design decisions that shaped
 LLVM<sup class="footnote"><a href="#footnote-1">1</a></sup>, an umbrella project that hosts
 and develops a set of close-knit low-level toolchain components (e.g.,
@@ -87,7 +99,7 @@ a new representation for optimization, and the optimizer and back end
 are run on the code.</p>
 
 <div class="figure" id="fig.llvm.com">
-  <img src="../../images/llvm/SimpleCompiler.png" alt="[Three Major Components of a Three-Phase Compiler]" />
+  <img src="../../static/llvm/SimpleCompiler.png" alt="[Three Major Components of a Three-Phase Compiler]" />
   <p>Figure 11.1: Three Major Components of a Three-Phase Compiler</p>
 </div>
 
@@ -118,7 +130,7 @@ can compile to it, and a back end can be written for any target that
 can compile from it, as shown in <a href="#fig.llvm.rtc">Figure 11.2</a>.</p>
 
 <div class="figure" id="fig.llvm.rtc">
-  <img src="../../images/llvm/RetargetableCompiler.png" alt="[Retargetablity]" />
+  <img src="../../static/llvm/RetargetableCompiler.png" alt="[Retargetablity]" />
   <p>Figure 11.2: Retargetablity</p>
 </div>
 
@@ -427,7 +439,7 @@ simple description glosses over some of the power and flexibility
 that the LLVM architecture derives from LLVM IR.</p>
 
 <div class="figure" id="fig.llvm.lcom">
-  <img src="../../images/llvm/LLVMCompiler1.png" alt="[LLVM's Implementation of the Three-Phase Design]" />
+  <img src="../../static/llvm/LLVMCompiler1.png" alt="[LLVM's Implementation of the Three-Phase Design]" />
   <p>Figure 11.3: LLVM's Implementation of the Three-Phase Design</p>
 </div>
 
@@ -551,7 +563,7 @@ language-specific optimization opportunities.
 XYZ image processing system:</p>
 
 <div class="figure" id="fig.llvn.pass">
-  <img src="../../images/llvm/PassLinkage.png" alt="[Hypothetical XYZ System using LLVM]" />
+  <img src="../../static/llvm/PassLinkage.png" alt="[Hypothetical XYZ System using LLVM]" />
   <p>Figure 11.4: Hypothetical XYZ System using LLVM</p>
 </div>
 
@@ -638,7 +650,7 @@ processed by the tblgen tool.  The (simplified) build process for the
 x86 target is shown in <a href="#fig.llvm.x86">Figure 11.5</a>.</p>
 
 <div class="figure" id="fig.llvm.x86">
-  <img src="../../images/llvm/X86Target.png" alt="[Simplified x86 Target Definition]" />
+  <img src="../../static/llvm/X86Target.png" alt="[Simplified x86 Target Definition]" />
   <p>Figure 11.5: Simplified x86 Target Definition</p>
 </div>
 
@@ -749,7 +761,7 @@ This option instructs the compiler to emit LLVM bitcode to the
 code generation to link time, shown in <a href="#fig.llvm.lto">Figure 11.6</a>.</p>
 
 <div class="figure" id="fig.llvm.lto">
-  <img src="../../images/llvm/LTO.png" alt="[Link-Time Optimization]" />
+  <img src="../../static/llvm/LTO.png" alt="[Link-Time Optimization]" />
   <p>Figure 11.6: Link-Time Optimization</p>
 </div>
 
@@ -779,7 +791,7 @@ you can pick the best answers for the specific hardware an application
 ends up running on.</p>
 
 <div class="figure" id="fig.llvm.ito">
-  <img src="../../images/llvm/InstallTime.png" alt="[Install-Time Optimization]" />
+  <img src="../../static/llvm/InstallTime.png" alt="[Install-Time Optimization]" />
   <p>Figure 11.7: Install-Time Optimization</p>
 </div>
 
@@ -973,5 +985,5 @@ least once.</li>
 </ol>
 </div>
 
-</body>
+  </body>
 </html>

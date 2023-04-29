@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): Eclipse</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)Eclipse</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>Eclipse</h1>
-      <p class="author"><a href="intro1.html#moir-kim">Kim Moir</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>Eclipse</h1>
+
+  
+
+<p class="author">
+  
+  Kim Moir
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>Implementing software modularity is a notoriously difficult task.
 Interoperability with a large code base written by a diverse community
 is also difficult to manage. At Eclipse, we have managed to succeed on
@@ -115,7 +127,7 @@ perspective. A perspective organizes the views and editors that are
 specific to the tooling that is currently in use.</p>
 
 <div class="figure" id="fig.ecl.jpersp">
-  <img src="../../images/eclipse/javaperspective.png" alt="[Java Perspective]" />
+  <img src="../../static/eclipse/javaperspective.png" alt="[Java Perspective]" />
   <p>Figure 6.1: Java Perspective</p>
 </div>
 
@@ -258,7 +270,7 @@ contributes to the org.eclipse.ui.actionSet extension point wouldn't
 be activated until the user selected the new menu item in the toolbar.</p>
 
 <div class="figure" id="fig.ecl.menu">
-  <img src="../../images/eclipse/examplemenu.png" alt="[Example Menu]" />
+  <img src="../../static/eclipse/examplemenu.png" alt="[Example Menu]" />
   <p>Figure 6.2: Example Menu</p>
 </div>
 
@@ -320,7 +332,7 @@ application. <a href="#fig.ecl.plat">Figure 6.3</a> shows clusters of related
 functionality contributed by plugins in early versions of Eclipse.</p>
 
 <div class="figure" id="fig.ecl.plat">
-  <img src="../../images/eclipse/platform.png" alt="[Early Eclipse Architecture]" />
+  <img src="../../static/eclipse/platform.png" alt="[Early Eclipse Architecture]" />
   <p>Figure 6.3: Early Eclipse Architecture</p>
 </div>
 
@@ -682,7 +694,7 @@ that the <code>org.eclipse.core.runtime</code> bundle that
 4.0.0.</p>
 
 <div class="figure" id="fig.ecl.blc">
-  <img src="../../images/eclipse/bundlelifecycle.png" alt="[OSGi Bundle Lifecycle]" />
+  <img src="../../static/eclipse/bundlelifecycle.png" alt="[OSGi Bundle Lifecycle]" />
   <p>Figure 6.4: OSGi Bundle Lifecycle</p>
 </div>
 
@@ -709,7 +721,7 @@ your dependencies.  OSGi uses a four-part versioning naming scheme as
 shown in <a href="#fig.ecl.ver">Figure 6.5</a>.</p>
 
 <div class="figure" id="fig.ecl.ver">
-  <img src="../../images/eclipse/versioning.png" alt="[Versioning Naming Scheme]" />
+  <img src="../../static/eclipse/versioning.png" alt="[Versioning Naming Scheme]" />
   <p>Figure 6.5: Versioning Naming Scheme</p>
 </div>
 
@@ -788,7 +800,7 @@ platform with a stable API that guaranteed that their technology
 choice would have long term support.</p>
 
 <div class="figure" id="fig.ecl.rcp">
-  <img src="../../images/eclipse/rcp.png" alt="[Eclipse 3.0 Architecture]" />
+  <img src="../../static/eclipse/rcp.png" alt="[Eclipse 3.0 Architecture]" />
   <p>Figure 6.6: Eclipse 3.0 Architecture</p>
 </div>
 
@@ -821,7 +833,7 @@ installed. Features can also include other features. (See
 <a href="#fig.ecl.feat">Figure 6.7</a>.)</p>
 
 <div class="figure" id="fig.ecl.feat">
-  <img src="../../images/eclipse/eclipse33features.png" alt="[Eclipse 3.3 SDK Feature Hierarchy]" />
+  <img src="../../static/eclipse/eclipse33features.png" alt="[Eclipse 3.3 SDK Feature Hierarchy]" />
   <p>Figure 6.7: Eclipse 3.3 SDK Feature Hierarchy</p>
 </div>
 
@@ -940,7 +952,7 @@ artifacts that they describe. A p2 repository consists of both
 metadata and artifact repositories.</p>
 
 <div class="figure" id="fig.ecl.p2">
-  <img src="../../images/eclipse/p2.png" alt="[P2 Concepts]" />
+  <img src="../../static/eclipse/p2.png" alt="[P2 Concepts]" />
   <p>Figure 6.8: P2 Concepts</p>
 </div>
 
@@ -1026,7 +1038,7 @@ advantage of new web-based technologies while providing an open
 architecture.</p>
 
 <div class="figure" id="fig.ecl.e4">
-  <img src="../../images/eclipse/e4.png" alt="[Eclipse 4.0 SDK Early Adopter Release]" />
+  <img src="../../static/eclipse/e4.png" alt="[Eclipse 4.0 SDK Early Adopter Release]" />
   <p>Figure 6.9: Eclipse 4.0 SDK Early Adopter Release</p>
 </div>
 
@@ -1054,7 +1066,7 @@ updated to reflect the changes in the model. <a href="#fig.ecl.mwb">Figure 6.10<
 is an example of a model generated for an example 4.x application.</p>
 
 <div class="figure" id="fig.ecl.mwb">
-  <img src="../../images/eclipse/modelledworkbench.png" alt="[Model Generated for Example 4.x Application]" />
+  <img src="../../static/eclipse/modelledworkbench.png" alt="[Model Generated for Example 4.x Application]" />
   <p>Figure 6.10: Model Generated for Example 4.x Application</p>
 </div>
 
@@ -1081,7 +1093,7 @@ producers and consumers. The broker is responsible for managing the
 relationship between producers and consumers.</p>
 
 <div class="figure" id="fig.ecl.prc">
-  <img src="../../images/eclipse/producerconsumer.png" alt="[Relationship Between Producers and Consumers]" />
+  <img src="../../static/eclipse/producerconsumer.png" alt="[Relationship Between Producers and Consumers]" />
   <p>Figure 6.11: Relationship Between Producers and Consumers</p>
 </div>
 
@@ -1114,7 +1126,7 @@ element of the model, will have a context. Services are published in
 4.x by means of the OSGi service mechanism.</p>
 
 <div class="figure" id="fig.ecl.con">
-  <img src="../../images/eclipse/context.png" alt="[Service Broker Context]" />
+  <img src="../../static/eclipse/context.png" alt="[Service Broker Context]" />
   <p>Figure 6.12: Service Broker Context</p>
 </div>
 
@@ -1214,6 +1226,6 @@ involved with Eclipse, please visit http://www.eclipse.org.
 <li id="footnote-3">For example: <code class="url">http://help.eclipse.org</code>.</li>
 </ol>
 </div>
-  
-</body>
+
+  </body>
 </html>

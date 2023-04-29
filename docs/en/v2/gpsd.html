@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): GPSD</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)GPSD</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>GPSD</h1>
-      <p class="author"><a href="intro2.html#raymond-eric">Eric Raymond</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>GPSD</h1>
+
+  
+
+<p class="author">
+  
+  Eric Raymond
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>GPSD is a suite of tools for managing collections of GPS devices and other
 sensors related to navigation and precision timekeeping, including
 marine AIS (Automatic Identification System) radios and digital compasses. The main program, a service
@@ -157,7 +169,7 @@ and it just works" experience might lead people to assume.
 the <em>multiplexer</em>. We'll describe these from the bottom up.</p>
 
 <figure id="fig.gpsd.layers">
-  <img src="../../images/gpsd/software-layers.png" />
+  <img src="../../static/gpsd/software-layers.png" />
   <figcaption>Figure 7.1: Software layers</figcaption>
 </figure>
 
@@ -305,7 +317,7 @@ and the daemon is quiescent. Devices that stop sending data get timed
 out of the device list.</p>
 
 <figure id="fig.gpsd.dataflow">
-  <img src="../../images/gpsd/dataflow.png" />
+  <img src="../../static/gpsd/dataflow.png" />
   <figcaption>Figure 7.2: Dataflow</figcaption>
 </figure>
 
@@ -788,5 +800,5 @@ coding practice, and a really determined focus on testing can achieve
 it&mdash;and the most important prerequisite is the discipline to pursue
 all three.</p>
 
-</body>
+  </body>
 </html>

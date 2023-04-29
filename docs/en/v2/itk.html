@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 2): ITK</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 2)ITK</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 2)<br>ITK</h1>
-      <p class="author"><a href="intro2.html#ibanez-luis">Luis Ib&aacute;&ntilde;ez</a> and <a href="intro2.html#king-brad">Brad King</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 2)<br>ITK</h1>
+
+  
+
+<p class="author">
+  
+  Luis Ibáñez and Brad King
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <h2>9.1. What Is ITK?</h2>
 
 <p><a href="http://www.itk.org">ITK, the Insight Toolkit</a>, is a library for
@@ -70,7 +82,7 @@ processing is naturally well-suited for a data pipeline architecture, as
 shown in <a href="#fig.itk.pipeline">Figure 9.1</a>.</p>
 
 <figure id="fig.itk.pipeline">
-  <img src="../../images/itk/ExampleImageProcessingPipeline.png" />
+  <img src="../../static/itk/ExampleImageProcessingPipeline.png" />
   <figcaption>Figure 9.1: Image processing pipeline</figcaption>
 </figure>
 
@@ -81,9 +93,9 @@ edge detection filter used to identify the borders of anatomical structures.</p>
 
 <div class="span9 offset2">
 <figure id="fig.itk.brim">
-  <img src="../../images/itk/BrainProtonDensitySlice.png">
-  <img src="../../images/itk/BrainProtonDensitySliceMedian.png">
-  <img src="../../images/itk/BrainProtonDensitySliceCanny.png">
+  <img src="../../static/itk/BrainProtonDensitySlice.png">
+  <img src="../../static/itk/BrainProtonDensitySliceMedian.png">
+  <img src="../../static/itk/BrainProtonDensitySliceCanny.png">
   <figcaption>Figure 9.2: MRI brain image, median filter, edge detection filter</figcaption>
 </figure>
 </div>
@@ -225,7 +237,7 @@ list dependencies between this module and other modules.
 </ol>
 
 <figure id="fig.itk.modulehierarchy">
-  <a href="../../images/itk/IllustrationOfModularStructure.png"><img src="../../images/itk/IllustrationOfModularStructure.png" /></a>
+  <a href="../../static/itk/IllustrationOfModularStructure.png"><img src="../../static/itk/IllustrationOfModularStructure.png" /></a>
   <figcaption>Figure 9.3: Hierarchical structure of groups, modules and classes</figcaption>
 </figure>
 
@@ -239,7 +251,7 @@ different sizes. This size distribution, in bytes, is presented in
 <a href="#fig.itk.modulesize">Figure 9.4</a>.</p>
 
 <figure id="fig.itk.modulesize">
-  <a href="../../images/itk/moduleSizePlotCombined.png"><img src="../../images/itk/moduleSizePlotCombined.png" /></a>
+  <a href="../../static/itk/moduleSizePlotCombined.png"><img src="../../static/itk/moduleSizePlotCombined.png" /></a>
   <figcaption>Figure 9.4: Size distribution of 50 largest ITK modules in KB</figcaption>
 </figure>
 
@@ -396,7 +408,7 @@ the only one that should modify such <code>DataObject</code>. This output <code>
 typically connected as input to another <code>ProcessObject</code> downstream in the pipeline.</p>
 
 <figure id="fig.itk.processobjectdataobject">
-  <a href="../../images/itk/ProcessObjectDataObject.png"><img src="../../images/itk/ProcessObjectDataObject.png" /></a>
+  <a href="../../static/itk/ProcessObjectDataObject.png"><img src="../../static/itk/ProcessObjectDataObject.png" /></a>
   <figcaption>Figure 9.5: Relationship between <code>ProcessObject</code>s and <code>DataObject</code>s</figcaption>
 </figure>
 
@@ -469,7 +481,7 @@ operations.</p>
 <h4>The Pipeline Class Hierarchy</h4>
 
 <figure id="fig.itk.processobjectdataobjecthierarchy">
-  <a href="../../images/itk/ProcessObjectDataObjectHierarchy.png"><img src="../../images/itk/ProcessObjectDataObjectHierarchy.png" /></a>
+  <a href="../../static/itk/ProcessObjectDataObjectHierarchy.png"><img src="../../static/itk/ProcessObjectDataObjectHierarchy.png" /></a>
   <figcaption>Figure 9.6: Hierarchy of <code>ProcessObject</code>s and <code>DataObject</code>s</figcaption>
 </figure>
 
@@ -526,7 +538,7 @@ sequence diagram describing the interactions between <code>ProcessObject</code>s
 </ul>
 
 <figure id="fig.itk.processobjectdataobjectinteractionuml">
-  <a href="../../images/itk/ProcessObjectDataObjectInteractionUML.png"><img src="../../images/itk/ProcessObjectDataObjectInteractionUML.png" /></a>
+  <a href="../../static/itk/ProcessObjectDataObjectInteractionUML.png"><img src="../../static/itk/ProcessObjectDataObjectInteractionUML.png" /></a>
   <figcaption>Figure 9.7: UML sequence diagram</figcaption>
 </figure>
 
@@ -625,7 +637,7 @@ extensibility, in which it is easy to add support for more and more file
 formats on a regular basis.</p>
 
 <figure id="fig.itk.io.factoriesregistry">
-  <a href="../../images/itk/ImageIOFactoriesDesignPattern.png"><img src="../../images/itk/ImageIOFactoriesDesignPattern.png" /></a>
+  <a href="../../static/itk/ImageIOFactoriesDesignPattern.png"><img src="../../static/itk/ImageIOFactoriesDesignPattern.png" /></a>
   <figcaption>Figure 9.8: IO Factories dependencies</figcaption>
 </figure>
 
@@ -802,7 +814,7 @@ images by pushing sub-blocks of the image throughout the data pipeline, and then
 assembling the resulting blocks on the output side of the pipeline.</p>
 
 <figure id="fig.itk.streaming">
-  <a href="../../images/itk/StreamingImageDiagram.png"><img src="../../images/itk/StreamingImageDiagram.png" /></a>
+  <a href="../../static/itk/StreamingImageDiagram.png"><img src="../../static/itk/StreamingImageDiagram.png" /></a>
   <figcaption>Figure 9.9: Illustration of image streaming process</figcaption>
 </figure>
 
@@ -1452,5 +1464,5 @@ contributions which from there make their way into the code base. The Journal
 recently received its 500th article, and continues to be used as the official
 gateway for new code to be added to ITK.</p>
 
-</body>
+  </body>
 </html>

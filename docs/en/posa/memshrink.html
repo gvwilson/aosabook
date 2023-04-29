@@ -3,31 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Performance of Open Source Software: MemShrink</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Performance of Open Source SoftwareMemShrink</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Performance of Open Source Applications<br>MemShrink</h1>
-      <p class="author">Kyle Huey</p>
-    </div>
-    <div class="banner">
+  <h1>The Performance of Open Source Software<br>MemShrink</h1>
+
+  
+
+<p class="author">
+  
+  Kyle Huey
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
 
-    <h2 id="introduction">Introduction</h2>
+<h2 id="introduction">Introduction</h2>
 
 <p>Firefox has long had a reputation for using too much memory. The accuracy of that reputation has varied over the years but it has stuck with the browser. Every Firefox release in the past several years has been met by skeptical users with the question "Did they fix the memory leak yet?" We shipped Firefox 4 in March 2011 after a lengthy beta cycle and several missed ship dates–and it was met by the same questions. While Firefox 4 was a significant step forward for the web in areas such as open video, JavaScript performance, and accelerated graphics, it was unfortunately a significant step backwards in memory usage.</p>
 
@@ -152,6 +164,7 @@
 <p>Over the two years that the MemShrink project has been active we have made great improvements in Firefox's memory usage. The MemShrink team has turned memory usage from one of the most common user complaints to a selling point for the browser and significantly improved the user experience for many Firefox users.</p>
 
 <p>I would like to thank Justin Lebar, Andrew McCreight, John Schoenick, Johnny Stenback, Jet Villegas, Timothy Nikkel for all of their work on MemShrink and the other engineers who have helped fix memory problems. Most of all I thank Nicholas Nethercote for getting MemShrink off the ground, working extensively on reducing Spidermonkey's memory usage, running the project for two years, and far too many other things to list. I would also like to thank Jet and Andrew for reviewing this chapter.</p>
+
 
   </body>
 </html>

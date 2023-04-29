@@ -1,3 +1,11 @@
+JEKYLL=bundle exec jekyll
+
+build:
+	${JEKYLL} build
+
+serve:
+	${JEKYLL} serve
+
 validate:
 	@html5validator --root docs --ignore \
 	'No space between attributes' \

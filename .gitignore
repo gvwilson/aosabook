@@ -11,4 +11,6 @@
 .DS_Store
 .c9
 .coverage
+.jekyll-cache
 .python-version
+_site

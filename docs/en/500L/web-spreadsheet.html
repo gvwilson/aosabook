@@ -3,31 +3,43 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>500 Lines or Less: Web Spreadsheet</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>500 Lines or LessWeb Spreadsheet</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>500 Lines or Less<br>Web Spreadsheet</h1>
-      <p class="author">Audrey Tang</p>
-    </div>
-    <div class="banner">
+  <h1>500 Lines or Less<br>Web Spreadsheet</h1>
+
+  
+
+<p class="author">
+  
+  Audrey Tang
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
 
-    <p><em>A self-educated programmer and translator, Audrey works with Apple as an independent contractor on cloud service localization and natural language technologies. Audrey has previously designed and led the first working Perl 6 implementation, and served in computer language design committees for Haskell, Perl 5, and Perl 6. Currently Audrey is a full-time g0v contributor and leads Taiwan’s first e-Rulemaking project.</em></p>
+<p><em>A self-educated programmer and translator, Audrey works with Apple as an independent contractor on cloud service localization and natural language technologies. Audrey has previously designed and led the first working Perl 6 implementation, and served in computer language design committees for Haskell, Perl 5, and Perl 6. Currently Audrey is a full-time g0v contributor and leads Taiwan’s first e-Rulemaking project.</em></p>
 
 <p>This chapter introduces a web spreadsheet written in 99 lines of the three languages natively supported by web browsers: HTML, JavaScript, and CSS.</p>
 
@@ -560,5 +572,6 @@ div<span class="fl">.error</span> <span class="kw">{</span> <span class="kw">tex
 <p>Building on the LiveScript language, the <a href="https://audreyt.github.io/500lines/spreadsheet/as-react-livescript/">as-react-livescript</a> directory uses the <a href="https://facebook.github.io/react/">ReactJS</a> framework; <a href="https://github.com/audreyt/500lines/tree/master/spreadsheet/as-react-livescript">it is 10 lines more longer</a> than the AngularJS equivalent, but runs considerably faster.</p>
 
 <p>If you are interested in translating this example to alternate JS languages, send a <a href="https://github.com/audreyt/500lines/pulls">pull request</a>—I’d love to hear about it!</p>
+
   </body>
 </html>

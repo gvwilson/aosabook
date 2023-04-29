@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): SocialCalc</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)SocialCalc</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>SocialCalc</h1>
-      <p class="author"><a href="intro1.html#tang-audrey">Audrey Tang</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>SocialCalc</h1>
+
+  
+
+<p class="author">
+  
+  Audrey Tang
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>The history of spreadsheets spans more than 30 years.  The first
 spreadsheet program, VisiCalc, was conceived by Dan Bricklin in 1978
 and shipped in 1979.  The original concept was quite straightforward:
@@ -110,17 +122,17 @@ time:</p>
 </ul>
 
 <div class="figure" id="fig.soc.screenshot">
-  <img src="../../images/socialcalc/wikicalc-screenshot.png" alt="[WikiCalc 1.0 Interface]" />
+  <img src="../../static/socialcalc/wikicalc-screenshot.png" alt="[WikiCalc 1.0 Interface]" />
   <p>Figure 19.1: WikiCalc 1.0 Interface</p>
 </div>
 
 <div class="figure" id="fig.soc.comp">
-  <img src="../../images/socialcalc/wikicalc-components.png" alt="[WikiCalc Components]" />
+  <img src="../../static/socialcalc/wikicalc-components.png" alt="[WikiCalc Components]" />
   <p>Figure 19.2: WikiCalc Components</p>
 </div>
 
 <div class="figure" id="fig.soc.flow">
-  <img src="../../images/socialcalc/wikicalc-flow.png" alt="[WikiCalc Flow]" />
+  <img src="../../static/socialcalc/wikicalc-flow.png" alt="[WikiCalc Flow]" />
   <p>Figure 19.3: WikiCalc Flow</p>
 </div>
 
@@ -156,7 +168,7 @@ interactively editing formulas by tweaking the input and expecting to
 see results in real time.</p>
 
 <div class="figure" id="fig.soc.load">
-  <img src="../../images/socialcalc/wikicalc-loading.png" alt="[Loading Message]" />
+  <img src="../../static/socialcalc/wikicalc-loading.png" alt="[Loading Message]" />
   <p>Figure 19.4: Loading Message</p>
 </div>
 
@@ -205,7 +217,7 @@ system.</p>
 <h2>19.2. SocialCalc</h2>
 
 <div class="figure" id="fig.soc.action">
-  <img src="../../images/socialcalc/socialcalc-screenshot.png" alt="[SocialCalc Interface]" />
+  <img src="../../static/socialcalc/socialcalc-screenshot.png" alt="[SocialCalc Interface]" />
   <p>Figure 19.5: SocialCalc Interface</p>
 </div>
 
@@ -218,7 +230,7 @@ the data, all calculations, change tracking and user interaction are
 now implemented in Javascript.</p>
 
 <div class="figure" id="fig.soc.class">
-  <img src="../../images/socialcalc/socialcalc-class-diagram.png" alt="[SocialCalc Class Diagram]" />
+  <img src="../../static/socialcalc/socialcalc-class-diagram.png" alt="[SocialCalc Class Diagram]" />
   <p>Figure 19.6: SocialCalc Class Diagram</p>
 </div>
 
@@ -343,7 +355,7 @@ several cells while the engine catches up on earlier changes in the
 command queue.</p>
 
 <div class="figure" id="fig.soc.loop">
-  <img src="../../images/socialcalc/socialcalc-command-runloop.png" alt="[SocialCalc Command Run-loop]" />
+  <img src="../../static/socialcalc/socialcalc-command-runloop.png" alt="[SocialCalc Command Run-loop]" />
   <p>Figure 19.7: SocialCalc Command Run-loop</p>
 </div>
 
@@ -407,7 +419,7 @@ horizontal/vertical scroll bars through two <code>TableControl</code>
 instances.</p>
 
 <div class="figure" id="fig.soc.parts">
-  <img src="../../images/socialcalc/socialcalc-parts.png" alt="[TableControl Instances Manage Scroll Bars]" />
+  <img src="../../static/socialcalc/socialcalc-parts.png" alt="[TableControl Instances Manage Scroll Bars]" />
   <p>Figure 19.8: TableControl Instances Manage Scroll Bars</p>
 </div>
 
@@ -435,7 +447,7 @@ bottom-right corner to the current editable cell, known as the ECell,
 shown in <a href="#fig.soc.ecell">Figure 19.9</a>.</p>
 
 <div class="figure" id="fig.soc.ecell">
-  <img src="../../images/socialcalc/socialcalc-cell-handles.png" alt="[Current Editable Cell, Known as the ECell]" />
+  <img src="../../static/socialcalc/socialcalc-cell-handles.png" alt="[Current Editable Cell, Known as the ECell]" />
   <p>Figure 19.9: Current Editable Cell, Known as the ECell</p>
 </div>
 
@@ -445,7 +457,7 @@ while the latter shows an updated-as-you-type preview layer,
 overlaying the ECell's content (<a href="#fig.soc.input">Figure 19.10</a>).</p>
 
 <div class="figure" id="fig.soc.input">
-  <img src="../../images/socialcalc/socialcalc-input.png" alt="[The Input Box is Managed by Two Classes]" />
+  <img src="../../static/socialcalc/socialcalc-input.png" alt="[The Input Box is Managed by Two Classes]" />
   <p>Figure 19.10: The Input Box is Managed by Two Classes</p>
 </div>
 
@@ -495,7 +507,7 @@ in A2, and the formula <code>SUM(Foo)</code> in A3 rendered in bold,
 referring to the named range <code>Foo</code> over <code>A1:A2</code>.</p>
 
 <div class="figure" id="fig.soc.save">
-  <img src="../../images/socialcalc/socialcalc-2046.png" alt="[A Spreadsheet with Three Cells]" />
+  <img src="../../static/socialcalc/socialcalc-2046.png" alt="[A Spreadsheet with Three Cells]" />
   <p>Figure 19.11: A Spreadsheet with Three Cells</p>
 </div>
 
@@ -560,7 +572,7 @@ with wiki markup to display its rich-text rendering right in the
 table editor (<a href="#fig.soc.rt">Figure 19.12</a>).</p>
 
 <div class="figure" id="fig.soc.rt">
-  <img src="../../images/socialcalc/richtext-screenshot.png" alt="[Rich Text Rendering in the Table Editor]" />
+  <img src="../../static/socialcalc/richtext-screenshot.png" alt="[Rich Text Rendering in the Table Editor]" />
   <p>Figure 19.12: Rich Text Rendering in the Table Editor</p>
 </div>
 
@@ -597,7 +609,7 @@ default format is looked up from its <code>valuetype</code>, as shown in
 <a href="#fig.soc.vformat">Figure 19.13</a>.</p>
 
 <div class="figure" id="fig.soc.vformat">
-  <img src="../../images/socialcalc/richtext-formats.png" alt="[Value Types]" />
+  <img src="../../static/socialcalc/richtext-formats.png" alt="[Value Types]" />
   <p>Figure 19.13: Value Types</p>
 </div>
 
@@ -658,7 +670,7 @@ spreadsheet.ExecuteCommand('set sheet defaulttextvalueformat text-wiki');
 <a href="#fig.soc.render">Figure 19.14</a>.</p>
 
 <div class="figure" id="fig.soc.render">
-  <img src="../../images/socialcalc/richtext-flow.png" alt="[Render Step]" />
+  <img src="../../static/socialcalc/richtext-flow.png" alt="[Render Step]" />
   <p>Figure 19.14: Render Step</p>
 </div>
 
@@ -666,19 +678,19 @@ spreadsheet.ExecuteCommand('set sheet defaulttextvalueformat text-wiki');
 markup syntax:</p>
 
 <pre>
-*bold* _italic_ `monospace` {{unformatted}}
+*bold* _italic_ `monospace` 
 &gt; indented text
 * unordered list
 # ordered list
 "Hyperlink with label"&lt;http://softwaregarden.com/&gt;
-{image: http://www.socialtext.com/images/logo.png}
+{image: http://www.socialtext.com/static/logo.png}
 </pre>
 
 <p class="continue">Try entering <code>*bold* _italic_ `monospace`</code> in A1, and you'll
 see it rendered as rich text (<a href="#fig.soc.rtext">Figure 19.15</a>).</p>
 
 <div class="figure" id="fig.soc.rtext">
-  <img src="../../images/socialcalc/richtext-example.png" alt="[Wikywyg Example]" />
+  <img src="../../static/socialcalc/richtext-example.png" alt="[Wikywyg Example]" />
   <p>Figure 19.15: Wikywyg Example</p>
 </div>
 
@@ -722,7 +734,7 @@ D-Bus/Telepathy, the standard transport for OLPC/Sugar networks (see
 <a href="#fig.soc.olpc">Figure 19.16</a>).</p>
 
 <div class="figure" id="fig.soc.olpc">
-  <img src="../../images/socialcalc/collab-olpc.png" alt="[OLPC Implementation]" />
+  <img src="../../static/socialcalc/collab-olpc.png" alt="[OLPC Implementation]" />
   <p>Figure 19.16: OLPC Implementation</p>
 </div>
 
@@ -748,7 +760,7 @@ project's Flash emulation of WebSocket, which is often faster and more reliable
 than MXHR.  The operation flow is shown in <a href="#fig.soc.collab">Figure 19.17</a>.</p>
 
 <div class="figure" id="fig.soc.collab">
-  <img src="../../images/socialcalc/collab-flow.png" alt="[Cross-Browser Flow]" />
+  <img src="../../static/socialcalc/collab-flow.png" alt="[Cross-Browser Flow]" />
   <p>Figure 19.17: Cross-Browser Flow</p>
 </div>
 
@@ -786,7 +798,7 @@ user, they will end up in different states, as shown in
 <a href="#fig.soc.conflict">Figure 19.18</a>.</p>
 
 <div class="figure" id="fig.soc.conflict">
-  <img src="../../images/socialcalc/collab-conflict.png" alt="[Race Condition Conflict]" />
+  <img src="../../static/socialcalc/collab-conflict.png" alt="[Race Condition Conflict]" />
   <p>Figure 19.18: Race Condition Conflict</p>
 </div>
 
@@ -794,7 +806,7 @@ user, they will end up in different states, as shown in
 shown in <a href="#fig.soc.resolve">Figure 19.19</a>.</p>
 
 <div class="figure" id="fig.soc.resolve">
-  <img src="../../images/socialcalc/collab-resolution.png" alt="[Race Condition Conflict Resolution]" />
+  <img src="../../static/socialcalc/collab-resolution.png" alt="[Race Condition Conflict Resolution]" />
   <p>Figure 19.19: Race Condition Conflict Resolution</p>
 </div>
 
@@ -860,7 +872,7 @@ box-shadow: inset 0 0 0 4px red, inset 0 0 0 2px green;
 people editing on the same spreadsheet.
 
 <div class="figure" id="fig.soc.borders">
-  <img src="../../images/socialcalc/collab-borders.png" alt="[Four Users Editing One Spreadsheet]" />
+  <img src="../../static/socialcalc/collab-borders.png" alt="[Four Users Editing One Spreadsheet]" />
   <p>Figure 19.20: Four Users Editing One Spreadsheet</p>
 </div>
 
@@ -1073,5 +1085,5 @@ into your favorite project, we'd definitely love to hear about it.</p>
 </ol>
 </div>
 
-</body>
+  </body>
 </html>

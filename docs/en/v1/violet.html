@@ -3,30 +3,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../../aosa.css" type="text/css">
+    <link rel="stylesheet" href="/static/aosa.css" type="text/css">
     <script defer data-domain="aosabook.org" src="https://plausible.io/js/plausible.js"></script>
-    <title>The Architecture of Open Source Applications (Volume 1): Violet</title>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+	tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+      });
+    </script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <title>The Architecture of Open Source Applications (Volume 1)Violet</title>
   </head>
   <body>
-
     <div class="titlebox">
-      <h1>The Architecture of Open Source Applications (Vol 1)<br>Violet</h1>
-      <p class="author"><a href="intro1.html#horstmann-cay">Cay Horstmann</a></p>
-    </div>
-    <div class="banner">
+  <h1>The Architecture of Open Source Applications (Volume 1)<br>Violet</h1>
+
+  
+
+<p class="author">
+  
+  Cay Horstmann
+  
+</p>
+
+
+</div>
+<div class="banner">
   <p>
-    On April 25 and 26, 2023,
-    <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a> is hosting
-    a set of online lightning talks from leading software engineering researchers
-    on immediate, actionable results from their work.
-    Tickets are available through
-    <a href="https://www.eventbrite.com/e/it-will-never-work-in-theory-tickets-527743173037">Eventbrite</a>,
-    and all of the money raised will go to support
-    <a href="https://www.booksforafrica.org/">Books for Africa</a>.
+    If you enjoy these books, you may also enjoy
+    <span style="display: inline-block"><a href="https://third-bit.com/sdxjs/">Software Design by Example in JavaScript</a></span>,
+    <span style="display: inline-block"><a href="https://merely-useful.tech/py-rse/">Research Software Engineering with Python</a></span>,
+    <span style="display: inline-block"><a href="https://third-bit.com/js4ds/">JavaScript for Data Science</a></span>,
+    <span style="display: inline-block"><a href="http://teachtogether.tech/">Teaching Tech Together</a></span>,
+    and <a href="https://neverworkintheory.org/">It Will Never Work in Theory</a>.
   </p>
 </div>
 
-        
+
 <p>In 2002, I wrote an undergraduate textbook on object-oriented design
 and patterns [<a href="bib1.html#bib:horstmann:oodp">Hor05</a>].
 As with so many books, this one
@@ -45,7 +57,7 @@ with a Swing <code>JScrollPane</code>, in the hope that this example is more
 memorable than the canonical Java streams example.</p>
 
 <div class="figure" id="fig.vio.diagram">
-  <img src="../../images/violet/object-sample.png" alt="[A Violet Object Diagram]" />
+  <img src="../../static/violet/object-sample.png" alt="[A Violet Object Diagram]" />
   <p>Figure 22.1: A Violet Object Diagram</p>
 </div>
 
@@ -131,7 +143,7 @@ diagrams. Another instance of the graph framework might display
 entity-relationship diagrams or railroad diagrams.</p>
 
 <div class="figure" id="fig.vio.editor">
-  <img src="../../images/violet/Ch8-06.png" alt="[A Simple Instance of the Editor Framework]" />
+  <img src="../../static/violet/Ch8-06.png" alt="[A Simple Instance of the Editor Framework]" />
   <p>Figure 22.2: A Simple Instance of the Editor Framework</p>
 </div>
 
@@ -190,7 +202,7 @@ key methods:</p>
 </ul>
 
 <div class="figure" id="fig.vio.connection">
-  <img src="../../images/violet/Ch8-07.png" alt="[Finding a Connection Point on the Boundary of the Node Shape]" />
+  <img src="../../static/violet/Ch8-07.png" alt="[Finding a Connection Point on the Boundary of the Node Shape]" />
   <p>Figure 22.3: Finding a Connection Point on the Boundary of the Node Shape</p>
 </div>
 
@@ -267,7 +279,7 @@ public class LineEdge extends AbstractEdge
 </pre>
 
 <div class="figure" id="fig.vio.classdiag">
-  <img src="../../images/violet/SimpleGraph-in-Violet.png" alt="[Class Diagram for a Simple Graph]" />
+  <img src="../../static/violet/SimpleGraph-in-Violet.png" alt="[Class Diagram for a Simple Graph]" />
   <p>Figure 22.4: Class Diagram for a Simple Graph</p>
 </div>
 
@@ -314,7 +326,7 @@ public Color getColor()
 colors of circle nodes (<a href="#fig.vio.circlecolors">Figure 22.5</a>).</p>
 
 <div class="figure" id="fig.vio.circlecolors">
-  <img src="../../images/violet/Ch8-11.png" alt="[Editing Circle Colors with the default JavaBeans Color Editor]" />
+  <img src="../../static/violet/Ch8-11.png" alt="[Editing Circle Colors with the default JavaBeans Color Editor]" />
   <p>Figure 22.5: Editing Circle Colors with the default JavaBeans Color Editor</p>
 </div>
 
@@ -696,7 +708,7 @@ adding a node is the node's removal. The undo of moving a node is to
 move it by the opposite vector.</p>
 
 <div class="figure" id="fig.vio.undo">
-  <img src="../../images/violet/undo.png" alt="[An Undo Operation Must Undo Structural Changes in the Model]" />
+  <img src="../../static/violet/undo.png" alt="[An Undo Operation Must Undo Structural Changes in the Model]" />
   <p>Figure 22.6: An Undo Operation Must Undo Structural Changes in the Model</p>
 </div>
 
@@ -832,5 +844,5 @@ admirable UMLGraph program [<a href="bib1.html#bib:spinellis:umlgraph">Spi03</a>
 </ol>
 </div>
 
-</body>
+  </body>
 </html>
