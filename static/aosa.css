@@ -53,7 +53,7 @@ code, pre {
 }
 
 body {
-    width: 68rem;
+    max-width: 68rem;
     margin-left: 1rem;
 }
 
